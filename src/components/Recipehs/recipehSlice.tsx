@@ -45,7 +45,7 @@ export const recipehSlice = createSlice({
         // loadRecipehTile: (state, action) => {
             
             
-        //     const recipehById: Recepeh | undefined = state.filteredRecipehs.find(recipeh => recipeh.id === action.payload);
+            // const recipehById: Recepeh | undefined = state.filteredRecipehs.find(recipeh => recipeh.id === action.payload);
         //     return {
         //         naam: recipehById.naam,
         //         picture: recipehById.picture
@@ -61,5 +61,6 @@ export const { randomRecipeh, addToVisited} = recipehSlice.actions;
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
 export const selectVisitedRecipehs = (state: RootState) => state.recipehs.visitedRecipehs;
+export const selectAllRecipehs = (state: RootState) => state.recipehs.allRecipehs;
 
 export default recipehSlice.reducer;

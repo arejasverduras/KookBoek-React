@@ -7,14 +7,14 @@ export const VisitedList = () => {
     const visitedList = useAppSelector(selectVisitedRecipehs);
 
     const visitedListItems = visitedList.map(id => 
-        <li>{<RecipehTile id={id} />}</li>)
+        <RecipehTile id={id} />)
         
-    
     return (
         <>
-    <ul>
-
-    </ul>
+            <ul style={{display:"flex", listStyleType:"none", flexWrap: "wrap",
+        maxWidth: '90%'}}>
+                {visitedListItems}
+            </ul>
         </>
     )
 }
