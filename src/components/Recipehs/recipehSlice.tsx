@@ -27,7 +27,6 @@ export const recipehSlice = createSlice({
             const index = randomIndex(state.filteredRecipehs);
                 console.log(index);
             state.currentRecipeh = state.filteredRecipehs[index];
-                console.log(state.currentRecipeh);
         }
     },
     extraReducers: {}

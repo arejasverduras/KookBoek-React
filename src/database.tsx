@@ -70,4 +70,4 @@
               'Zet de saus op een laag vuur, deze is nu klaar',
               'Voeg de pasta toe aan de saus als deze klaar is. Roer door en serveer. Eet smakelijk!' ]
     }
-  ]
+  ];

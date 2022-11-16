@@ -1,12 +1,12 @@
 import React from 'react';
-
 import './App.css';
+import { Recipehs } from './components/Recipehs/Recipehs';
 
 function App() {
   return (
     <div className="App">
-        {/* <Header />
-        <Outlet /> / <Recepehs /> */}
+        {/* <Header /> */}
+        <Recipehs />
     </div>
   );
 }
