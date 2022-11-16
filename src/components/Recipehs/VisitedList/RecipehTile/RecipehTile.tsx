@@ -9,7 +9,7 @@ export const RecipehTile = ({id}:any)=>{
     
     if (recipehById !== undefined){
         return (
-            <li style={{margin: 10}}>
+            <li style={{margin: 10, border: "1px solid black", borderRadius: 15, padding: 10, boxShadow: 'black 5px 5px'}}>
             <h3>{recipehById.naam}</h3>
             <img style={{width: 100}}className="" src={recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture} alt="" />
             </li>

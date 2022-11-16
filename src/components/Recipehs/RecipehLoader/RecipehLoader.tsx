@@ -25,7 +25,9 @@ export const RecipehLoader = () => {
         )
     } else if (recipeh !== null){
         return (
-            <Recipeh current={recipeh}/>
+            <>
+                <Recipeh current={recipeh}/>
+            </>
         )
     }
 
