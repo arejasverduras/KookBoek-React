@@ -1,18 +1,17 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
-import { RecepehBook, Recepeh, userRecipehBook } from '../../database';
+import { RecepehBook, Recepeh, userRecipehBook, initialBook } from '../../database';
 import { randomIndex } from './recipehFeatures';
-
 
 export interface RecipehsState {
     allRecipehs: RecepehBook,
-    filteredRecipehs: RecepehBook,
-    currentRecipeh: Recepeh | null,
+    filteredRecipehs: RecepehBook ,
+    currentRecipeh: Recepeh | null | string,
     visitedRecipehs: number[];
 }
 
 const initialState: RecipehsState = {
-    allRecipehs: userRecipehBook, // turn this into a (fake) api call later
+    allRecipehs: userRecipehBook, // userRecipehBook //initalBook // turn this into a (fake) api call later
     filteredRecipehs: userRecipehBook,
     currentRecipeh: null,
     visitedRecipehs: []
@@ -23,26 +22,44 @@ export const recipehSlice = createSlice({
     initialState,
     reducers: {
         randomRecipeh: (state) => {
-            //get random index number based on inputArray length
-            const index = randomIndex(state.filteredRecipehs);
-                console.log(index);
+            let index = randomIndex(state.filteredRecipehs);
+            while(state.visitedRecipehs.includes(state.filteredRecipehs[index].id)){
+                index = randomIndex(state.filteredRecipehs);
+                if (state.filteredRecipehs.length === state.visitedRecipehs.length){
+                    state.currentRecipeh = 'No more Recipehs!'
+                    return;
+                }   
+            };
 
-                
-            state.currentRecipeh = state.filteredRecipehs[index];
+            if (state.filteredRecipehs.length === state.visitedRecipehs.length){
+                state.currentRecipeh = 'No more Recipehs!'
+            } else {
+                state.currentRecipeh = state.filteredRecipehs[index];
+            }
         }, 
         addToVisited: (state, action) => {
             if (!state.visitedRecipehs.includes(action.payload)){
             state.visitedRecipehs.push(action.payload);
-        }
-        }
+            }
+        },
+        // loadRecipehTile: (state, action) => {
+            
+            
+        //     const recipehById: Recepeh | undefined = state.filteredRecipehs.find(recipeh => recipeh.id === action.payload);
+        //     return {
+        //         naam: recipehById.naam,
+        //         picture: recipehById.picture
+        //     }
+        // }
     },
     extraReducers: {}
 });
 
 //export recucer actions
-export const { randomRecipeh, addToVisited } = recipehSlice.actions;
+export const { randomRecipeh, addToVisited} = recipehSlice.actions;
 
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
+export const selectVisitedRecipehs = (state: RootState) => state.recipehs.visitedRecipehs;
 
 export default recipehSlice.reducer;

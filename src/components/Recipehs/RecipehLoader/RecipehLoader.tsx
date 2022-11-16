@@ -1,15 +1,29 @@
-import React from "react";
-import { useAppSelector,  } from "../../../app/hooks";
-import { selectCurrentRecipeh } from "../recipehSlice";
+import React, { useState, useEffect } from "react";
+import { useAppDispatch, useAppSelector,  } from "../../../app/hooks";
+import { addToVisited, selectCurrentRecipeh } from "../recipehSlice";
 import { Recipeh } from "../Recipeh/Recipeh";
 import { Recepeh } from "../../../database";
 
 
 export const RecipehLoader = () => {
+    const recipeh: Recepeh | null | string = useAppSelector(selectCurrentRecipeh);
+    const dispatch = useAppDispatch();
 
-    const recipeh: Recepeh | null = useAppSelector(selectCurrentRecipeh);
+    // const [finishedList, setFinishedList] = useState();
 
-    if (recipeh !== null){
+    useEffect(()=>{
+        if(typeof recipeh !== 'string' && recipeh !== null){
+            dispatch(addToVisited(recipeh.id));
+        }
+    },[recipeh])
+
+    if (typeof recipeh === 'string'){
+        return (
+            <>
+                <h1>No more recipehs!</h1>
+            </>
+        )
+    } else if (recipeh !== null){
         return (
             <Recipeh current={recipeh}/>
         )
@@ -17,7 +31,7 @@ export const RecipehLoader = () => {
 
     return (
         <>
-        <h1>Hit the button!</h1>
+            <h1>Hit the button!</h1>
         </>
     )
 };

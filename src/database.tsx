@@ -11,6 +11,16 @@
 
   export type RecepehBook = Recepeh[];
 
+  export const initialBook: RecepehBook = [{
+    id: 1,
+    naam: 'Shakshuka',
+    ingredienten: ['rode punt paprika', 'ei', 'ui', '2 pakjes tomatenblokje','wortel','koriander', 'naanbrood', 'aioli'],
+    voorkeur: 'vega',
+    kooktijd: 20,
+    categorie: 'exotisch',
+    picture: "./images/Shakshuka.jpg"
+  }]
+
   export const userRecipehBook: RecepehBook = [
     {
       id: 1,

@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { randomRecipeh, addToVisited, selectCurrentRecipeh } from "../recipehSlice";
+import { randomRecipeh, selectCurrentRecipeh } from "../recipehSlice";
 
 export const RandomButton = () => {
     const dispatch = useAppDispatch();
@@ -9,8 +9,7 @@ export const RandomButton = () => {
 
     const clickHandler = () => {
         dispatch(randomRecipeh());
-        if (current !== null){
-        dispatch(addToVisited(current.id))
+        if (current !== null && typeof current !== 'string'){
     }
     }
 
