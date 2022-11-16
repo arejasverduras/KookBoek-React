@@ -1,4 +1,3 @@
-
   export interface Recepeh {
     id: number,
     naam: string,

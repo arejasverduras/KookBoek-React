@@ -8,7 +8,7 @@ export interface RecipehsState {
     allRecipehs: RecepehBook,
     filteredRecipehs: RecepehBook,
     currentRecipeh: Recepeh | null,
-    visitedRecipehs: number[] | null,
+    visitedRecipehs: number[];
 }
 
 const initialState: RecipehsState = {
@@ -26,14 +26,21 @@ export const recipehSlice = createSlice({
             //get random index number based on inputArray length
             const index = randomIndex(state.filteredRecipehs);
                 console.log(index);
+
+                
             state.currentRecipeh = state.filteredRecipehs[index];
+        }, 
+        addToVisited: (state, action) => {
+            if (!state.visitedRecipehs.includes(action.payload)){
+            state.visitedRecipehs.push(action.payload);
+        }
         }
     },
     extraReducers: {}
 });
 
 //export recucer actions
-export const { randomRecipeh } = recipehSlice.actions;
+export const { randomRecipeh, addToVisited } = recipehSlice.actions;
 
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
