@@ -10,9 +10,9 @@
     instructie?: string[]
   }
 
-  export type Receptenboek = Recepeh[];
+  export type RecepehBook = Recepeh[];
 
-  export const kookboek2: Receptenboek = [
+  export const userRecipehBook: RecepehBook = [
     {
       id: 1,
       naam: 'Paddenstoelen Pasta',
