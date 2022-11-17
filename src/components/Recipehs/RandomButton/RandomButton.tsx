@@ -14,6 +14,6 @@ export const RandomButton = () => {
     }
 
     return (
-            <button id="randomButton" onClick={clickHandler}>Click me!</button>
+            <button id="randomButton" onClick={clickHandler}>Feed me!</button>
     )
 }
