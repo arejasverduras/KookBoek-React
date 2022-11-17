@@ -41,7 +41,12 @@ export const recipehSlice = createSlice({
             if (!state.visitedRecipehs.includes(action.payload)){
             state.visitedRecipehs.push(action.payload);
             }
-        },
+        },setCurrentRecipeh: (state, action) => {
+            let foundIndex = state.allRecipehs.findIndex(recipeh => 
+                recipeh.id === action.payload
+            )
+            state.currentRecipeh = state.allRecipehs[foundIndex]
+        }
         // loadRecipehTile: (state, action) => {
             
             
@@ -56,7 +61,7 @@ export const recipehSlice = createSlice({
 });
 
 //export recucer actions
-export const { randomRecipeh, addToVisited} = recipehSlice.actions;
+export const { randomRecipeh, addToVisited, setCurrentRecipeh} = recipehSlice.actions;
 
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
