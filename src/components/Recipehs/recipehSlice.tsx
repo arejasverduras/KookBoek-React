@@ -11,7 +11,7 @@ export interface RecipehsState {
 }
 
 const initialState: RecipehsState = {
-    allRecipehs: userRecipehBook, // userRecipehBook //initalBook // turn this into a (fake) api call later
+    allRecipehs: userRecipehBook, // userRecipehBook //initialBook // turn this into a (fake) api call later
     filteredRecipehs: userRecipehBook,
     currentRecipeh: null,
     visitedRecipehs: []
@@ -47,15 +47,6 @@ export const recipehSlice = createSlice({
             )
             state.currentRecipeh = state.allRecipehs[foundIndex]
         }
-        // loadRecipehTile: (state, action) => {
-            
-            
-            // const recipehById: Recepeh | undefined = state.filteredRecipehs.find(recipeh => recipeh.id === action.payload);
-        //     return {
-        //         naam: recipehById.naam,
-        //         picture: recipehById.picture
-        //     }
-        // }
     },
     extraReducers: {}
 });

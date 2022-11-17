@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector,  } from "../../../app/hooks";
 import { addToVisited, selectCurrentRecipeh } from "../recipehSlice";
 import { Recipeh } from "../Recipeh/Recipeh";
@@ -21,7 +21,6 @@ export const RecipehLoader = () => {
         return (
             <>
                 <h1>No more recipehs!</h1>
-                {/* <Recipeh current={recipeh}/> */}
             </>
         )
     } else if (recipeh !== null){
