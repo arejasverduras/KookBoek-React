@@ -7,7 +7,9 @@ export const VisitedList = () => {
     const visitedList = useAppSelector(selectVisitedRecipehs);
 
     const visitedListItems = visitedList.map(id => 
-        <RecipehTile id={id} />)
+        <div key={id}>
+            <RecipehTile id={id} />
+        </div>)
         
     return (
         <>
