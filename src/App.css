@@ -29,15 +29,16 @@ button:active {
 
 .Header {
   background-color: rgb(255, 162, 0);
-  color: rgb(244, 245, 226);
+  color: rgb(5, 5, 2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  box-shadow: rgb(239, 252, 0) 5px 5px;
+  box-shadow: rgb(252, 227, 0) 5px 5px;
 }
 
 #headerTitle {
   font-style: italic;
+  text-transform:uppercase;
   /* text-shadow: rgb(239, 252, 0) 3px 2px; */
 }
