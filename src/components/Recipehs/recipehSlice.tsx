@@ -5,7 +5,7 @@ import { randomIndex } from './recipehFeatures';
 
 export interface RecipehsState {
     allRecipehs: RecepehBook,
-    filteredRecipehs: RecepehBook ,
+    filteredRecipehs: RecepehBook | [],
     currentRecipeh: Recepeh | null | string,
     visitedRecipehs: number[];
 }
@@ -21,20 +21,39 @@ export const recipehSlice = createSlice({
     name: 'recipehs',
     initialState,
     reducers: {
+        // randomRecipehOld: (state) => {
+        //     let index = randomIndex(state.filteredRecipehs);
+        //     while(state.visitedRecipehs.includes(state.filteredRecipehs[index].id)){
+        //         index = randomIndex(state.filteredRecipehs);
+        //         if (state.filteredRecipehs.length === state.visitedRecipehs.length){
+        //             state.currentRecipeh = 'No more Recipehs!'
+        //             return;
+        //         }   
+        //     };
+
+        //     if (state.filteredRecipehs.length === state.visitedRecipehs.length){
+        //         state.currentRecipeh = 'No more Recipehs!'
+        //     } else {
+        //         state.currentRecipeh = state.filteredRecipehs[index];
+        //     }
+        // }, 
         randomRecipeh: (state) => {
             let index = randomIndex(state.filteredRecipehs);
-            while(state.visitedRecipehs.includes(state.filteredRecipehs[index].id)){
+            console.log(state.filteredRecipehs.length);
+            while(state.filteredRecipehs.length >= 1 && state.visitedRecipehs.includes(state.filteredRecipehs[index].id)){
+                state.filteredRecipehs.splice(index, 1);
                 index = randomIndex(state.filteredRecipehs);
-                if (state.filteredRecipehs.length === state.visitedRecipehs.length){
-                    state.currentRecipeh = 'No more Recipehs!'
-                    return;
-                }   
+                // if (state.filteredRecipehs.length === state.visitedRecipehs.length){
+                //     state.currentRecipeh = 'No more Recipehs!'
+                //     return;
+                // }   
             };
 
-            if (state.filteredRecipehs.length === state.visitedRecipehs.length){
+            if (state.filteredRecipehs.length < 1){
                 state.currentRecipeh = 'No more Recipehs!'
             } else {
-                state.currentRecipeh = state.filteredRecipehs[index];
+                let current = state.filteredRecipehs.splice(index, 1);
+                state.currentRecipeh = current[0];
             }
         }, 
         addToVisited: (state, action) => {
