@@ -35,10 +35,26 @@ button:active {
   align-items: center;
   padding: 8px 20px;
   box-shadow: rgb(252, 227, 0) 5px 5px;
+
 }
 
 #headerTitle {
   font-style: italic;
   text-transform:uppercase;
   /* text-shadow: rgb(239, 252, 0) 3px 2px; */
+}
+
+.recipehHeader {
+  background-color: lightgray;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+
+}
+
+.voorkeur {
+  margin: 0px 5px;
+  font-size: 1em;
 }
