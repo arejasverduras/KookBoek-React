@@ -39,6 +39,16 @@ export const recipehSlice = createSlice({
                 let current = state.filteredRecipehs.splice(index, 1);
                 state.currentRecipeh = current[0];
             }
+
+            if(typeof state.currentRecipeh !== 'string' && state.currentRecipeh!== null){
+                let id:any = state.currentRecipeh.id;
+                console.log(id);
+                let action = {
+                    type: 'add',
+                    payload: id
+                }
+                recipehSlice.caseReducers.addToVisited(state, action);
+            }
         }, 
         addToVisited: (state, action) => {
             if (!state.visitedRecipehs.includes(action.payload)){
@@ -55,7 +65,7 @@ export const recipehSlice = createSlice({
             let voorkeur:string = action.payload;
             state.filter = voorkeur;
             if (state.filter === "alles"){
-                state.filteredRecipehs = state.allRecipehs
+                state.filteredRecipehs = state.allRecipehs.filter(recipeh => recipeh.voorkeur);
             } else {
                 state.filteredRecipehs = state.allRecipehs.filter(recipeh => recipeh.voorkeur === state.filter);
             }
