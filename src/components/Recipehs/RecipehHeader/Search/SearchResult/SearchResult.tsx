@@ -19,7 +19,7 @@ export const SearchResult = () => {
 
     if (searchResult.length > 0){
         result = searchResult.map(result => 
-                    <h3 onClick={()=>resultClickHandler(result.id)}>{result.naam}</h3>
+                    <h3 key={result.id} onClick={()=>resultClickHandler(result.id)}>{result.naam}</h3>
         )
     }
 
