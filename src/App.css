@@ -58,3 +58,7 @@ button:active {
   margin: 0px 5px;
   font-size: 1em;
 }
+
+.voorkeur.active {
+  background-color: rgb(137, 255, 208);
+}

@@ -1,23 +1,27 @@
 import React from "react";
-import { useAppDispatch } from "../../../../app/hooks";
-import { setFilter } from "../../recipehSlice";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import { setFilter, selectFilter } from "../../recipehSlice";
 
 export const Filters = () => {
     const dispatch = useAppDispatch();
+    const filter = useAppSelector(selectFilter);
 
     const toggleFilter = ({target}:any) => {
         dispatch(setFilter(target.value))
     }
+
+    const voorkeurOptions = ["Alles", "Vega", "Vegan", "Vlees", "Vis"];
+
+    const voorkeurButtons = voorkeurOptions.map(voorkeur => 
+        <button className={voorkeur === filter? "voorkeur active": "voorkeur"} 
+                onClick={toggleFilter} 
+                value={voorkeur}>{voorkeur}
+        </button>
+        )
     
     return (
         <div className="Filters">
-            <button className="voorkeur" onClick={toggleFilter} value="alles">Alles</button>
-            <button className="voorkeur" onClick={toggleFilter} value="vega">Vega</button>
-            <button className="voorkeur" onClick={toggleFilter} value="vegan">Vegan</button>
-            <button className="voorkeur" onClick={toggleFilter} value="vlees">Vlees</button>
-            <button className="voorkeur" onClick={toggleFilter} value="vis">Vis</button>
+            {voorkeurButtons}
         </div>
     )
 };
-
-// value === filter? className="active voorkeur": voorkeur;

@@ -17,7 +17,7 @@ const initialState: RecipehsState = {
     filteredRecipehs: userRecipehBook,
     currentRecipeh: null,
     visitedRecipehs: [],
-    filter: null,
+    filter: "Alles"
     // searchTerm: ""
 }
 
@@ -54,7 +54,7 @@ export const recipehSlice = createSlice({
         setFilter: (state, action) => {
             let voorkeur:string = action.payload;
             state.filter = voorkeur;
-            if (state.filter === "alles"){
+            if (state.filter === "Alles"){
                 state.filteredRecipehs = state.allRecipehs.filter(recipeh => recipeh.voorkeur);
             } else {
                 state.filteredRecipehs = state.allRecipehs.filter(recipeh => recipeh.voorkeur === state.filter);
@@ -74,5 +74,6 @@ export const { randomRecipeh, addToVisited, setCurrentRecipeh, setFilter} = reci
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
 export const selectVisitedRecipehs = (state: RootState) => state.recipehs.visitedRecipehs;
 export const selectAllRecipehs = (state: RootState) => state.recipehs.allRecipehs;
+export const selectFilter = (state: RootState) => state.recipehs.filter;
 
 export default recipehSlice.reducer;
