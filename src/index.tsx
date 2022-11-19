@@ -24,9 +24,9 @@ root.render(
 
             <Route index element={<Recipehs />} />
             <Route path="recipehs" element={<Recipehs />} >
-                <Route index element={<RecipehLoader />} />
+                <Route index element={<Recipeh />} />
                 <Route path=":recipehId" element={<Recipeh />} />
-                <Route path="*" element={<RecipehLoader />} />
+                <Route path="*" element={<Recipeh />} />
             </Route>
             <Route 
                 path="*"

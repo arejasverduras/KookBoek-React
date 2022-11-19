@@ -4,11 +4,11 @@ import { selectCurrentRecipeh, setCurrentRecipeh, addToVisited } from "../recipe
 import { useParams } from "react-router-dom";
 
 export const Recipeh = () => {
-    const current = useAppSelector(selectCurrentRecipeh);
-
     const dispatch = useAppDispatch();
-
     const params = useParams();
+
+    const current = useAppSelector(selectCurrentRecipeh);
+    
     let id = Number(params.recipehId);
     console.log(`id = ${id}`);
     console.log(typeof id);
@@ -27,7 +27,14 @@ export const Recipeh = () => {
     
         console.log(current);
 
-    if (current !== null && typeof current !== 'string'){
+
+    if (typeof current === 'string'){
+        return (
+            <>
+                <h1>No more recipehs!</h1>
+            </>
+        )
+    } else if (current !== null ){
 
     return (
         <div style = {{
@@ -46,7 +53,7 @@ export const Recipeh = () => {
         } else {
             return (
                 <>
-                    <p>Recipeh not found!</p>
+                    <h1>Hit the button!!</h1>
                 </>
             )
         }

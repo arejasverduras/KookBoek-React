@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
 import { RecepehBook, Recepeh, userRecipehBook, initialBook } from '../../database';
 import { randomIndex } from './recipehFeatures';
+import { useNavigate } from 'react-router-dom';
 
 export interface RecipehsState {
     allRecipehs: RecepehBook,
@@ -33,6 +34,7 @@ export const recipehSlice = createSlice({
                 index = randomIndex(state.filteredRecipehs); 
             };
 
+            
             if (state.filteredRecipehs.length < 1){
                 state.currentRecipeh = 'No more Recipehs!'
             } else {
