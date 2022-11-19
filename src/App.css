@@ -67,3 +67,7 @@ a {
   color: black;
   text-decoration: none;
 }
+
+.secondaryButton {
+  background-color: rgb(255, 162, 0);
+}

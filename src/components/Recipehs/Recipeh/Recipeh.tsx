@@ -1,6 +1,6 @@
 import React , {useEffect} from "react";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
-import { selectCurrentRecipeh, setCurrentRecipeh, addToVisited } from "../recipehSlice";
+import { selectCurrentRecipeh, setCurrentRecipeh, addToVisited, resetAll } from "../recipehSlice";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const Recipeh = () => {
@@ -11,6 +11,12 @@ export const Recipeh = () => {
     const current = useAppSelector(selectCurrentRecipeh);
  
     let id = Number(params.recipehId);
+
+    const clickHandler = () => {
+
+        navigate("/");
+        dispatch(resetAll());
+    }
 
     useEffect(()=>{
         if (current !== null && typeof current !== 'string'){
@@ -38,6 +44,7 @@ export const Recipeh = () => {
         return (
             <>
                 <h1>No more recipehs!</h1>
+                <button className="secondaryButton" onClick={clickHandler}>Reload</button>
             </>
         )
     } else if (current !== null ){

@@ -64,18 +64,25 @@ export const recipehSlice = createSlice({
             }
            
             recipehSlice.caseReducers.randomRecipeh(state);
+        },
+        resetAll: (state) => {
+            state.currentRecipeh = null;
+            state.visitedRecipehs = [];
+            state.filteredRecipehs = userRecipehBook;
+            state.filter = "Alles"
         }
     },  
     extraReducers: {}
 });
 
 //export recucer actions
-export const { randomRecipeh, addToVisited, setCurrentRecipeh, setFilter} = recipehSlice.actions;
+export const { randomRecipeh, addToVisited, setCurrentRecipeh, setFilter, resetAll} = recipehSlice.actions;
 
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
 export const selectVisitedRecipehs = (state: RootState) => state.recipehs.visitedRecipehs;
 export const selectAllRecipehs = (state: RootState) => state.recipehs.allRecipehs;
 export const selectFilter = (state: RootState) => state.recipehs.filter;
+
 
 export default recipehSlice.reducer;
