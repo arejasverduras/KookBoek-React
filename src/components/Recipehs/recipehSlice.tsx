@@ -49,7 +49,8 @@ export const recipehSlice = createSlice({
             let foundIndex:number = state.allRecipehs.findIndex(recipeh => 
                 recipeh.id === action.payload
             )
-            state.currentRecipeh = state.allRecipehs[foundIndex]
+            if (foundIndex >= 0)
+            {state.currentRecipeh = state.allRecipehs[foundIndex]}
         },
         setFilter: (state, action) => {
             let voorkeur:string = action.payload;

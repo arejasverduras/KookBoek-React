@@ -1,6 +1,33 @@
-import React from "react";
+import React , {useEffect} from "react";
+import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+import { selectCurrentRecipeh, setCurrentRecipeh, addToVisited } from "../recipehSlice";
+import { useParams } from "react-router-dom";
 
-export const Recipeh = ({current}:any) => {
+export const Recipeh = () => {
+    const current = useAppSelector(selectCurrentRecipeh);
+
+    const dispatch = useAppDispatch();
+
+    const params = useParams();
+    let id = Number(params.recipehId);
+    console.log(`id = ${id}`);
+    console.log(typeof id);
+
+    useEffect(()=>{
+        if (id !== undefined) {
+            dispatch(setCurrentRecipeh(id));
+        }    
+        },[id])
+
+        useEffect(()=>{
+            if(typeof current !== 'string' && current !== null){
+                dispatch(addToVisited(current.id));
+            }
+        },[current]);
+    
+        console.log(current);
+
+    if (current !== null && typeof current !== 'string'){
 
     return (
         <div style = {{
@@ -16,4 +43,11 @@ export const Recipeh = ({current}:any) => {
                 <p>{current.voorkeur}</p>
         </div>
     )
+        } else {
+            return (
+                <>
+                    <p>Recipeh not found!</p>
+                </>
+            )
+        }
 };

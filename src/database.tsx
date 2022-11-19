@@ -48,7 +48,7 @@
       voorkeur: 'Vega',
       kooktijd: 20,
       categorie: 'exotisch',
-      picture: "./images/Shakshuka.jpg"
+      picture: "/images/Shakshuka.jpg"
 
     },
     {
