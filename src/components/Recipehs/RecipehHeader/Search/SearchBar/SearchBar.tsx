@@ -10,7 +10,6 @@ export const SearchBar = () => {
         dispatch(setSearchTerm(target.value));
     }
 
-
     return (
         <div className="searchBar">
             <input type="text" onChange={changeHandler} value={searchTerm} placeholder="Search" />
