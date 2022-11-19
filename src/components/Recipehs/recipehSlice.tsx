@@ -61,9 +61,8 @@ export const recipehSlice = createSlice({
             }
            
             recipehSlice.caseReducers.randomRecipeh(state);
-            
         }
-    },
+    },  
     extraReducers: {}
 });
 

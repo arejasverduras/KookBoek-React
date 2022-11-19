@@ -10,6 +10,10 @@ export const Filters = () => {
         dispatch(setFilter(target.value))
     }
 
+    //later: create a filters object
+    //move all available filters to a filtersSlice in the store
+    //then generate available options here
+
     const voorkeurOptions = ["Alles", "Vega", "Vegan", "Vlees", "Vis"];
 
     const voorkeurButtons = voorkeurOptions.map(voorkeur => 
