@@ -17,7 +17,7 @@ export const Filters = () => {
     const voorkeurOptions = ["Alles", "Vega", "Vegan", "Vlees", "Vis"];
 
     const voorkeurButtons = voorkeurOptions.map(voorkeur => 
-        <button className={voorkeur === filter? "voorkeur active": "voorkeur"} 
+        <button key={voorkeur} className={voorkeur === filter? "voorkeur active": "voorkeur"} 
                 onClick={toggleFilter} 
                 value={voorkeur}>{voorkeur}
         </button>
