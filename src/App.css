@@ -63,6 +63,24 @@ button:active {
   background-color: rgb(137, 255, 208);
 }
 
+/* Search */
+
+.searchBar input {
+  background-color: lightgray;
+  border: none;
+  color: black;
+  font-size: 1em;
+  border-bottom: 1px solid rgba(47, 79, 79, 0.294);
+  transition: all 50ms;
+}
+
+.searchBar input:focus {
+  outline: none;
+  font-size: 1.2em;
+  border-bottom: 1px solid darkslategray;
+
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -71,3 +89,4 @@ a {
 .secondaryButton {
   background-color: rgb(255, 162, 0);
 }
+

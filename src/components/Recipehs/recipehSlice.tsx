@@ -10,7 +10,7 @@ export interface RecipehsState {
     currentRecipeh: Recepeh | null | string,
     visitedRecipehs: number[];
     filter: string // or string[] | []
-    // searchTerm: string
+    searchTerm: string
 }
 
 const initialState: RecipehsState = {
@@ -18,8 +18,8 @@ const initialState: RecipehsState = {
     filteredRecipehs: userRecipehBook,
     currentRecipeh: null,
     visitedRecipehs: [],
-    filter: "Alles"
-    // searchTerm: ""
+    filter: "Alles",
+    searchTerm: ""
 }
 
 export const recipehSlice = createSlice({
@@ -65,6 +65,9 @@ export const recipehSlice = createSlice({
            
             recipehSlice.caseReducers.randomRecipeh(state);
         },
+        setSearchTerm: (state, action) => {
+            state.searchTerm = action.payload;
+        },
         resetAll: (state) => {
             state.currentRecipeh = null;
             state.visitedRecipehs = [];
@@ -76,13 +79,14 @@ export const recipehSlice = createSlice({
 });
 
 //export recucer actions
-export const { randomRecipeh, addToVisited, setCurrentRecipeh, setFilter, resetAll} = recipehSlice.actions;
+export const { randomRecipeh, addToVisited, setCurrentRecipeh, setFilter, setSearchTerm, resetAll} = recipehSlice.actions;
 
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
 export const selectVisitedRecipehs = (state: RootState) => state.recipehs.visitedRecipehs;
 export const selectAllRecipehs = (state: RootState) => state.recipehs.allRecipehs;
 export const selectFilter = (state: RootState) => state.recipehs.filter;
+export const selectSearchTerm = (state: RootState) => state.recipehs.searchTerm;
 
 
 export default recipehSlice.reducer;
