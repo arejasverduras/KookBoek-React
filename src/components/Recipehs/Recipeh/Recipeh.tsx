@@ -13,10 +13,27 @@ export const Recipeh = () => {
     let id = Number(params.recipehId);
 
     const clickHandler = () => {
-
         navigate("/");
         dispatch(resetAll());
     }
+    //scroll into view
+    const scrollToSpot = () =>{
+        if (current)
+        {const title = document.getElementsByTagName('h1')[0];
+        title.scrollIntoView({behavior: 'smooth'});}
+        else {
+            return
+        }
+    }
+
+    // set pageTitle
+    const setPageTitle = () => {
+        if (typeof current !== 'string' && current !== null){
+        document.title = `Koekboek! - ${current.naam}`}
+    }
+
+    useEffect(scrollToSpot, [current]);
+    useEffect(setPageTitle, [current]);
 
     useEffect(()=>{
         if (current !== null && typeof current !== 'string'){
