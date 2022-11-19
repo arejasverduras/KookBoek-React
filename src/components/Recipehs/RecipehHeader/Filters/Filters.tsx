@@ -19,3 +19,5 @@ export const Filters = () => {
         </div>
     )
 };
+
+// value === filter? className="active voorkeur": voorkeur;

@@ -11,11 +11,11 @@ export const RecipehLoader = () => {
 
     // const [finishedList, setFinishedList] = useState();
 
-    // useEffect(()=>{
-    //     if(typeof recipeh !== 'string' && recipeh !== null){
-    //         dispatch(addToVisited(recipeh.id));
-    //     }
-    // },[recipeh])
+    useEffect(()=>{
+        if(typeof recipeh !== 'string' && recipeh !== null){
+            dispatch(addToVisited(recipeh.id));
+        }
+    },[recipeh]);
 
     if (typeof recipeh === 'string'){
         return (

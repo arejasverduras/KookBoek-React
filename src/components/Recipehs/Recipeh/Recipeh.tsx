@@ -11,10 +11,9 @@ export const Recipeh = ({current}:any) => {
             margin: '0 auto',
             paddingBottom: 50
             }}>
-            {/* <p>ID: {current.id}</p> */}
-            <h1>{current.naam}</h1>
-            <img style={{height: 200}}className="" src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
-            <p>{current.voorkeur}</p>
+                <h1>{current.naam}</h1>
+                <img style={{height: 200}}className="" src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
+                <p>{current.voorkeur}</p>
         </div>
     )
 };
