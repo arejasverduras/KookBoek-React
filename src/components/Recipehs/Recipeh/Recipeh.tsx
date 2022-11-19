@@ -1,20 +1,31 @@
 import React , {useEffect} from "react";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import { selectCurrentRecipeh, setCurrentRecipeh, addToVisited } from "../recipehSlice";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const Recipeh = () => {
     const dispatch = useAppDispatch();
     const params = useParams();
+    const navigate = useNavigate();
 
     const current = useAppSelector(selectCurrentRecipeh);
-
+ 
     let id = Number(params.recipehId);
 
+    useEffect(()=>{
+        if (current !== null && typeof current !== 'string'){
+            navigate(`/recipehs/${current.id}`);
+    }
+    },[current])
+    
     useEffect(()=>{
         if (id !== undefined) {
             dispatch(setCurrentRecipeh(id));
         }    
+        },[id]);
+
+        useEffect(()=>{
+           
         },[id])
 
         useEffect(()=>{
