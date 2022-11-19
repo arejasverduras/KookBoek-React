@@ -8,7 +8,7 @@ export interface RecipehsState {
     filteredRecipehs: RecepehBook | [],
     currentRecipeh: Recepeh | null | string,
     visitedRecipehs: number[];
-    filter: string | null, // or string[] | []
+    filter: string // or string[] | []
     // searchTerm: string
 }
 
