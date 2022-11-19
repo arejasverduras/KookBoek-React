@@ -73,7 +73,7 @@ export const recipehSlice = createSlice({
         getSearchResults: (state, action) => {
             let searchTerm = action.payload.toLowerCase();
             let result = state.allRecipehs.filter(recipeh => 
-                    recipeh.naam.toLowerCase().includes(searchTerm) || recipeh.ingredienten.includes(searchTerm)
+                    recipeh.naam.toLowerCase().includes(searchTerm) || recipeh.ingredienten.includes(searchTerm) || recipeh.voorkeur.toLowerCase().includes(searchTerm)
                 );
                 //also apply category filters later
             state.searchResult = result;
