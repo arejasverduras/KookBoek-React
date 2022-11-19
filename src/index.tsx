@@ -9,7 +9,6 @@ import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Recipehs } from './components/Recipehs/Recipehs';
 import { Recipeh } from './components/Recipehs/Recipeh/Recipeh';
-import { RecipehLoader } from './components/Recipehs/RecipehLoader/RecipehLoader';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);

@@ -8,10 +8,8 @@ export const Recipeh = () => {
     const params = useParams();
 
     const current = useAppSelector(selectCurrentRecipeh);
-    
+
     let id = Number(params.recipehId);
-    console.log(`id = ${id}`);
-    console.log(typeof id);
 
     useEffect(()=>{
         if (id !== undefined) {
@@ -24,9 +22,6 @@ export const Recipeh = () => {
                 dispatch(addToVisited(current.id));
             }
         },[current]);
-    
-        console.log(current);
-
 
     if (typeof current === 'string'){
         return (
@@ -53,7 +48,7 @@ export const Recipeh = () => {
         } else {
             return (
                 <>
-                    <h1>Hit the button!!</h1>
+                    <h1>Hit the button!</h1>
                 </>
             )
         }
