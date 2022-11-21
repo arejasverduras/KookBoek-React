@@ -2,8 +2,8 @@ import React from "react";
 
 
 export const Recipeh =({current}:any) => {
-    const ingredientsList = current.ingredienten.map((ingredient:string) => <li>{ingredient}</li>)
-
+    const ingredientsList = current.ingredienten.map((ingredient:string, index:number) => <li key={index}>{ingredient}</li>);
+    const instructionList = current.instructie.map((instructie:string, index:number)=> <li key={index}>{instructie}</li>);
 
     return (
         <div className="recipeh">
@@ -18,6 +18,14 @@ export const Recipeh =({current}:any) => {
             <ul className="recipehIngredientsList">
                 {ingredientsList}
             </ul>
+            {current.instructie.length > 0 ? 
+            <>
+                <h2>Instructies</h2>
+                <ul className="recipehInstructionList">
+                    {instructionList}
+                </ul>
+            </>
+            : null}
         </div>
    
     )
