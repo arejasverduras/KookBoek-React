@@ -1,14 +1,17 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { selectAllRecipehs, setCurrentRecipeh } from "../../recipehSlice";
+import { selectAllRecipehs, setCurrentRecipeh, setSearchTerm } from "../../recipehSlice";
 
-export const RecipehTile = ({id}:any)=>{
+export const RecipehTile = ({id, resetHandler}:any)=>{
     const dispatch = useAppDispatch();
     const allRecipehs = useAppSelector(selectAllRecipehs);
     const recipehById = allRecipehs.find(recipeh => recipeh.id === id);
     
     const clickHandler = () => {
         dispatch(setCurrentRecipeh(id));
+        if (resetHandler){
+            dispatch(setSearchTerm(""))
+        }
     } 
     
     if (recipehById !== undefined){

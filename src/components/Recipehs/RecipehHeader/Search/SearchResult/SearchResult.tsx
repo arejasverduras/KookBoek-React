@@ -21,7 +21,7 @@ export const SearchResult = () => {
     if (searchResult.length > 0){
         result = searchResult.map(result => 
                     // <h3 key={result.id} onClick={()=>resultClickHandler(result.id)}>{result.naam}</h3>
-                    <RecipehTile id={result.id} key={result.id} />
+                    <RecipehTile id={result.id} key={result.id} resetHandler={true} />
         )
     }
 

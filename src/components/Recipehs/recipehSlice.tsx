@@ -29,7 +29,6 @@ export const recipehSlice = createSlice({
     reducers: {
         randomRecipeh: (state) => {
             let index = randomIndex(state.filteredRecipehs);
-            // console.log(state.filteredRecipehs.length);
             while(state.filteredRecipehs.length >= 1 && state.visitedRecipehs.includes(state.filteredRecipehs[index].id)){
                 state.filteredRecipehs.splice(index, 1);
                 index = randomIndex(state.filteredRecipehs); 
