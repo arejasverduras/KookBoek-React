@@ -174,12 +174,44 @@ a {
   color: white;
 }
 
+.recipehTextContainer {
+  text-align: left;
+  padding: 20px;
+}
+
+@media screen and (min-width: 680px) {
+  .recipehTextContainer {
+    display:flex;
+    justify-content: center;
+  }
+
+  .recipehInstructionSection {
+    /* display: block; */
+    margin-left: 40px;
+    max-width: 50%;
+  }
+}
+
 .recipehIngredientsList {
   text-align: left;
+  list-style: none;
+  padding-left: 0;
 }
 
 .recipehIngredientsList li {
-  text-align: left;
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.recipehInstructionList {
+  list-style-position:outside;
+  list-style-type:upper-roman;
+  padding-left: 20px;
+  /* list-style-type: none; */
+
+}
+
+.recipehInstructionList li {
   padding: 5px;
   color: rgba(0, 0, 0, 0.65);
 }

@@ -14,18 +14,23 @@ export const Recipeh =({current}:any) => {
                 <div >{current.kooktijd}</div>
                 <div>{current.categorie}</div>
             </div>
-            <h2>Ingredienten</h2>
-            <ul className="recipehIngredientsList">
-                {ingredientsList}
-            </ul>
-            {current.instructie.length > 0 ? 
-            <>
-                <h2>Instructies</h2>
-                <ul className="recipehInstructionList">
-                    {instructionList}
-                </ul>
-            </>
-            : null}
+            
+            <div className="recipehTextContainer">
+                <div className="recipehIngredientenSection">
+                    <h2>Ingredienten</h2>
+                    <ul className="recipehIngredientsList">
+                        {ingredientsList}
+                    </ul>
+                </div>
+                {current.instructie.length > 0 ? 
+                <div className="recipehInstructionSection">
+                    <h2>Instructies</h2>
+                    <ol className="recipehInstructionList">
+                        {instructionList}
+                    </ol>
+                </div>
+                : null}
+            </div>
         </div>
    
     )
