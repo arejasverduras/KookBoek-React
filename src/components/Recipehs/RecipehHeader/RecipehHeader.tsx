@@ -6,8 +6,10 @@ import { Search } from "./Search/Search";
 export const RecipehHeader = () => {
     return (
         <div className="recipehHeader">
-            <Filters />
-            <Search />
+            <div className="recipehHeaderItemsContainer">
+                <Filters />
+                <Search />
+            </div>
         </div>
     )
 };

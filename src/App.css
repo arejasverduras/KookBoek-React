@@ -27,6 +27,17 @@ button:active {
   left: 4px;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.secondaryButton {
+  background-color: rgb(255, 162, 0);
+}
+
+/* Header */
+
 .Header {
   background-color: rgb(255, 162, 0);
   color: rgb(5, 5, 2);
@@ -44,33 +55,53 @@ button:active {
   /* text-shadow: rgb(239, 252, 0) 3px 2px; */
 }
 
+/* Recipehs page */
 .recipehHeader {
   background-color: lightgray;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 50px;
 
 }
 
-.voorkeur {
+.recipehHeaderItemsContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+/* Filters */
+
+.Filters {
+  width: 100%;
+  /* justify-content: center; */
+}
+
+.voorkeurButton {
   margin: 0px 5px;
   font-size: 1em;
 }
 
-.voorkeur.active {
+.voorkeurButton.active {
   background-color: rgb(137, 255, 208);
 }
 
+
 /* Search */
+
+.search {
+  width: 100%;
+}
 
 .searchBar input {
   background-color: lightgray;
   border: none;
   color: black;
   font-size: 1em;
+  width: 70%;
   border-bottom: 1px solid rgba(47, 79, 79, 0.294);
+  margin-top: 30px;
   transition: all 50ms;
 }
 
@@ -81,13 +112,14 @@ button:active {
 
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
+@media screen and (min-width: 680px) {
+  .search {
+    width: 40%;
+  }
 
-.secondaryButton {
-  background-color: rgb(255, 162, 0);
+  .Filters {
+    width: 60%;
+  }
 }
 
 /* Search Result List */
@@ -116,6 +148,18 @@ a {
   max-width: 40%;
   max-height: 100%;
 }
+
+/* Recipeh */
+
+.recipeh {
+  max-width: 1024px;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: black 5px 5px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
 
 /* Visited Items */
 

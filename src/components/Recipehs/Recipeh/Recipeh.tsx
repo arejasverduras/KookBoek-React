@@ -67,14 +67,7 @@ export const Recipeh = () => {
     } else if (current !== null ){
 
     return (
-        <div style = {{
-            maxWidth: '90%',
-            border: '1px solid black',
-            borderRadius: 15,
-            boxShadow: 'black 5px 5px',
-            margin: '0 auto',
-            paddingBottom: 50
-            }}>
+        <div className="recipeh">
                 <h1>{current.naam}</h1>
                 <img style={{height: 200}}className="" src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
                 <p>{current.voorkeur}</p>

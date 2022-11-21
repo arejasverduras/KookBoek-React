@@ -6,7 +6,7 @@ import { SearchBar } from "./SearchBar/SearchBar";
 export const Search = () => {
 
     return (
-        <div className="Search">
+        <div className="search">
             <SearchBar />
         </div>
     )
