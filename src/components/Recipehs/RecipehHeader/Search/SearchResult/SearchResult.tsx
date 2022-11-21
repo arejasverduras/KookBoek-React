@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../../app/hooks";
 import { getSearchResults, selectSearchResult, selectSearchTerm, setCurrentRecipeh } from "../../../recipehSlice";
+import { RecipehTile } from "../../../VisitedList/RecipehTile/RecipehTile";
 
 export const SearchResult = () => {
     const searchTerm = useAppSelector(selectSearchTerm);
@@ -19,7 +20,8 @@ export const SearchResult = () => {
 
     if (searchResult.length > 0){
         result = searchResult.map(result => 
-                    <h3 key={result.id} onClick={()=>resultClickHandler(result.id)}>{result.naam}</h3>
+                    // <h3 key={result.id} onClick={()=>resultClickHandler(result.id)}>{result.naam}</h3>
+                    <RecipehTile id={result.id} key={result.id} />
         )
     }
 
@@ -27,7 +29,10 @@ export const SearchResult = () => {
         return (
             <div className="searchResult">
                 <h2>Recipehs for {searchTerm}</h2>
-                {result}
+                <ul className="resultList">
+                    {result}
+                </ul>
+                
             </div>
         )
     }

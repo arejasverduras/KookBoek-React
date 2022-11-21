@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
 import { RecepehBook, Recepeh, userRecipehBook, initialBook } from '../../database';
 import { randomIndex } from './recipehFeatures';
-import { useNavigate } from 'react-router-dom';
 
 export interface RecipehsState {
     allRecipehs: RecepehBook,
@@ -77,6 +76,7 @@ export const recipehSlice = createSlice({
                     || recipeh.ingredienten.some(ing => ing.toLowerCase().includes(searchTerm))
                     || recipeh.voorkeur.toLowerCase().includes(searchTerm)
                     || recipeh.categorie.toLowerCase().includes(searchTerm)
+                    //search instructions array as well
                     || recipeh.instructie.some(ins => ins.toLowerCase().includes(searchTerm))
                 );
                 //also apply category filters later

@@ -90,3 +90,38 @@ a {
   background-color: rgb(255, 162, 0);
 }
 
+/* Search Result List */
+
+.searchResult {
+  margin: 0 auto;
+}
+
+.resultList {
+  margin: 0 auto;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipehTile {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: black 5px 5px;
+}
+
+.searchResult .resultList .recipehTile {
+  max-width: 40%;
+  max-height: 100%;
+}
+
+/* Visited Items */
+
+  .visitedList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+  }

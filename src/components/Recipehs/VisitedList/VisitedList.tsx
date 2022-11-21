@@ -13,8 +13,7 @@ export const VisitedList = () => {
         
     return (
         <>
-            <ul style={{display:"flex", listStyleType:"none", flexWrap: "wrap",
-        maxWidth: '90%'}}>
+            <ul className="visitedList" >
                 {visitedListItems}
             </ul>
         </>
