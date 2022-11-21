@@ -19,8 +19,13 @@ export const Recipeh = () => {
     //scroll into view
     const scrollToSpot = () =>{
         if (current)
-        {const title = document.getElementsByTagName('h1')[0];
-        title.scrollIntoView({behavior: 'smooth'});}
+            {
+            const title = document.getElementById("recipehTitle");
+        if (title !== null )
+            {
+            title.scrollIntoView({behavior: 'smooth'});
+            }
+        }
         else {
             return
         }
@@ -60,7 +65,7 @@ export const Recipeh = () => {
     if (typeof current === 'string'){
         return (
             <>
-                <h1>No more recipehs!</h1>
+                <h1 id="recipehTitle">No more recipehs!</h1>
                 <button className="secondaryButton" onClick={clickHandler}>Reload</button>
             </>
         )
@@ -68,7 +73,7 @@ export const Recipeh = () => {
 
     return (
         <div className="recipeh">
-                <h1>{current.naam}</h1>
+                <h1 id="recipehTitle">{current.naam}</h1>
                 <img style={{height: 200}}className="" src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
                 <p>{current.voorkeur}</p>
         </div>
@@ -76,7 +81,7 @@ export const Recipeh = () => {
         } else {
             return (
                 <>
-                    <h1>Hit the button!</h1>
+                    <h1 id="recipehTitle">Hit the button!</h1>
                 </>
             )
         }
