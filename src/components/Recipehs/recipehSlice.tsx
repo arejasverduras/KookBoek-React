@@ -57,7 +57,7 @@ export const recipehSlice = createSlice({
         setFilter: (state, action) => {
             let voorkeur:string = action.payload;
             state.filter = voorkeur;
-            if (state.filter === "Alles"){
+            if (state.filter === "alles"){
                 state.filteredRecipehs = state.allRecipehs.filter(recipeh => recipeh.voorkeur);
             } else {
                 state.filteredRecipehs = state.allRecipehs.filter(recipeh => recipeh.voorkeur === state.filter);
@@ -85,7 +85,7 @@ export const recipehSlice = createSlice({
             state.currentRecipeh = null;
             state.visitedRecipehs = [];
             state.filteredRecipehs = userRecipehBook;
-            state.filter = "Alles"
+            state.filter = "alles"
         }
     },  
     extraReducers: {}
