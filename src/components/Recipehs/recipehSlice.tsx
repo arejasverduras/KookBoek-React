@@ -74,12 +74,11 @@ export const recipehSlice = createSlice({
             let searchTerm = action.payload.toLowerCase();
             let result = state.allRecipehs.filter(recipeh => 
                     recipeh.naam.toLowerCase().includes(searchTerm) 
-                    || recipeh.ingredienten.includes(searchTerm) 
+                    || recipeh.ingredienten.some(ing => ing.toLowerCase().includes(searchTerm))
                     || recipeh.voorkeur.toLowerCase().includes(searchTerm)
                     || recipeh.categorie.toLowerCase().includes(searchTerm)
+                    || recipeh.instructie.some(ins => ins.toLowerCase().includes(searchTerm))
                 );
-                //recipeh properties standaard lowercase maken / 
-                //in de views alles capitalisen
                 //also apply category filters later
             state.searchResult = result;
         },

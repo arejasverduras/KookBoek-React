@@ -6,7 +6,7 @@
     kooktijd: number,
     categorie: string,
     picture?: string | null,
-    instructie?: string[]
+    instructie: string[]
   }
 
   export type RecepehBook = Recepeh[];
@@ -18,7 +18,8 @@
     voorkeur: 'vega',
     kooktijd: 20,
     categorie: 'exotisch',
-    picture: "./images/Shakshuka.jpg"
+    picture: "./images/Shakshuka.jpg",
+    instructie: []
   }]
 
   export const userRecipehBook: RecepehBook = [
@@ -39,7 +40,8 @@
       voorkeur: 'Vegan',
       kooktijd: 10, 
       categorie: 'salade',
-      picture: null
+      picture: null,
+      instructie: []
     },
     {
       id: 3,
@@ -48,7 +50,8 @@
       voorkeur: 'Vega',
       kooktijd: 20,
       categorie: 'exotisch',
-      picture: "/images/Shakshuka.jpg"
+      picture: "/images/Shakshuka.jpg",
+      instructie: []
 
     },
     {
