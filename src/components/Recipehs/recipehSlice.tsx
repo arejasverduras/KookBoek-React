@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
 import { RecepehBook, Recepeh, userRecipehBook, initialBook } from '../../database';
-import { randomIndex } from './recipehFeatures';
+import { randomIndex } from '../../features/recipehFeatures';
 
 export interface RecipehsState {
     allRecipehs: RecepehBook,

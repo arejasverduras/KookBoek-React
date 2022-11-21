@@ -1,8 +1,9 @@
 import React from "react";
+import { capitalize } from "../../../features/recipehFeatures";
 
 
 export const Recipeh =({current}:any) => {
-    const ingredientsList = current.ingredienten.map((ingredient:string, index:number) => <li key={index}>{ingredient}</li>);
+    const ingredientsList = current.ingredienten.map((ingredient:string, index:number) => <li key={index}>{capitalize(ingredient)}</li>);
     const instructionList = current.instructie.map((instructie:string, index:number)=> <li key={index}>{instructie}</li>);
 
     return (
