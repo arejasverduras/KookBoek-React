@@ -8,7 +8,7 @@ import './index.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Recipehs } from './components/Recipehs/Recipehs';
-import { Recipeh } from './components/Recipehs/Recipeh/Recipeh';
+import { RecipehContainer } from './components/Recipehs/Recipeh/RecipehContainer';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -23,9 +23,9 @@ root.render(
 
             <Route index element={<Recipehs />} />
             <Route path="recipehs" element={<Recipehs />} >
-                <Route index element={<Recipeh />} />
-                <Route path=":recipehId" element={<Recipeh />} />
-                <Route path="*" element={<Recipeh />} />
+                <Route index element={<RecipehContainer />} />
+                <Route path=":recipehId" element={<RecipehContainer />} />
+                <Route path="*" element={<RecipehContainer />} />
             </Route>
             <Route 
                 path="*"

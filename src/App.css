@@ -160,6 +160,24 @@ a {
   padding-bottom: 50px;
 }
 
+.recipeh img {
+  max-height: 400px;
+}
+
+.recipehMetaList {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.recipehIngredientsList {
+  text-align: left;
+}
+
+.recipehIngredientsList li {
+  text-align: left;
+  padding: 5px;
+}
 
 /* Visited Items */
 
