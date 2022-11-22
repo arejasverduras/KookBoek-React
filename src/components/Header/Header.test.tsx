@@ -37,3 +37,4 @@ test("Clicking the app Tile text should return to the homepage", ()=>{
     const path = document.location.pathname;
     expect(path).toEqual("/");
 });
+

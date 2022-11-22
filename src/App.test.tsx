@@ -15,3 +15,13 @@ test('renders div containg App', () => {
     )
         screen.getAllByLabelText("App")
 });
+
+// test('renders Feed Me Button', () => {
+//     const {user} = renderWithRouter(
+    
+//         <Provider store={store}>
+//             <App />
+//       </Provider>
+//     )
+//         screen.getByText("Feed me!")
+// });
