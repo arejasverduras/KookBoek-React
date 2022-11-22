@@ -22,10 +22,10 @@ export const RecipehContainer = () => {
         if (current)
             {
             const title = document.getElementById("recipehTitle");
-        if (title !== null )
-            {
-            title.scrollIntoView({behavior: 'smooth'});
-            }
+            // if (title !== null )
+            //     {
+            //     title.scrollIntoView({behavior: 'smooth'});
+            //     }
         }
         else {
             return

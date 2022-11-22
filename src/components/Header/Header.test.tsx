@@ -1,6 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store } from "../../app/store";
+// import { store } from "../../app/store";
+import { setupStore } from "../../app/store";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Header } from "./Header";
 
@@ -8,7 +9,7 @@ import userEvent from "@testing-library/user-event";
 
 test("Header should render app Title", () => {
     render (
-        <Provider store={store}>
+        <Provider store={setupStore()}>
             <Router>
                 <Header />
             </Router>
@@ -21,7 +22,7 @@ test("Header should render app Title", () => {
 
 test("Clicking the app Tile text should return to the homepage", ()=>{
     render (
-        <Provider store={store}>
+        <Provider store={setupStore()}>
             <Router>
                 <Header />
             </Router>

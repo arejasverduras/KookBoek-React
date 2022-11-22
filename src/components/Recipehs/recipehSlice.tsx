@@ -13,7 +13,7 @@ export interface RecipehsState {
     searchResult: Recepeh[]
 }
 
-const initialState: RecipehsState = {
+export const initialState: RecipehsState = {
     allRecipehs: userRecipehBook, // userRecipehBook //initialBook // turn this into a (fake) api call later
     filteredRecipehs: userRecipehBook,
     currentRecipeh: null,
