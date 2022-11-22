@@ -8,6 +8,34 @@ import { RecipehContainer } from './components/Recipehs/Recipeh/RecipehContainer
 import App from './App';
 
 
+test('the root should return a Hit the Button button as a recipeh', () => {
+    
+    let urlToTest = "/";
+    renderWithProviders(
+        <Routes>
+        <Route path="/" element={<App />}>
+
+          <Route index element={<Recipehs />} />
+          <Route path="recipehs" element={<Recipehs />} >
+              <Route index element={<RecipehContainer />} />
+              <Route path=":recipehId" element={<RecipehContainer />} />
+              <Route path="*" element={<RecipehContainer />} />
+          </Route>
+          <Route 
+              path="*"
+              element={<Recipehs />}/>
+
+        </Route>
+      </Routes>,
+      {route: urlToTest}
+        ) 
+        // const route = "/recipehs/5";
+        // window.history.pushState({}, 'Test page', route)
+        
+        screen.getAllByText('Hit the button!');
+});
+
+
 
 test('changin the Url to recipehs/:recipehId renders the correct Recipeh', () => {
     
