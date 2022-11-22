@@ -3,10 +3,5 @@ export const randomIndex = (arr: {}[]):number => {
 }
 
 export const capitalize =(word:string):string => {
-    let newString;
-        let stringArray = word.split('');
-        stringArray[0] = stringArray[0].toUpperCase();
-    newString = stringArray.join('');
-
-    return newString;
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
