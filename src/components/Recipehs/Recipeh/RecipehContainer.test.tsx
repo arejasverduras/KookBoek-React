@@ -1,12 +1,11 @@
 import React from 'react';
-import {  render, screen } from '@testing-library/react';
+import {  screen } from '@testing-library/react';
 import { renderWithProviders } from '../../../utils-test';
-import { Routes, Route } from 'react-router-dom';
 import { RandomButton } from '../RandomButton/RandomButton';
 import { RecipehContainer } from './RecipehContainer';
-import { initialState } from '../recipehSlice';
+import type { RecepehBook } from '../../../database';
 import { act } from 'react-dom/test-utils';
-import { notDeepEqual } from 'assert';
+
 
 
 test("Renders 'Hit the Button' if no recipeh is selected / on initial load", ()=>{
@@ -39,7 +38,26 @@ test("Renders a Recipeh if a recipeh is selected by clicking the random button",
 });
 
 test("Stop rendering recipeh's if all filterd recipehs have been visited", ()=>{
-    const filteredRecipehs:[] = [];  
+    const filteredRecipehs:RecepehBook | [] = [];  
+    const currentRecipeh =     {
+        id: 5,
+        naam: 'Zalm Broccoli Pasta',
+        ingredienten: ['zalmsnippers', 'brocolli', 'ui', 'knoflook', 'slagroom', 'italiaanse Kruiden', 'pasta'],
+        voorkeur: 'vis',
+        kooktijd: 15,
+        categorie: 'pasta',
+        picture: null,
+        instructie: ['Zet water op voor de pasta',
+                    'Knoflook & ui in de koekenpan', 
+                    'Voeg de brocolli toe', 
+                    'Snijd de zalm in zalmsnippers en voeg toe',
+                    'Voeg de italiaanse kruiden toe',
+                    'Als het water kookt, doe je de pasta erin',
+                  'Voeg de slagroom toe',
+                'Zet de saus op een laag vuur, deze is nu klaar',
+                'Voeg de pasta toe aan de saus als deze klaar is. Roer door en serveer. Eet smakelijk!' ]
+      }
+
 renderWithProviders(
         <>  
             <RandomButton />
@@ -51,7 +69,7 @@ renderWithProviders(
                     recipehs: {
                         allRecipehs: [],
                         filteredRecipehs: filteredRecipehs, 
-                        currentRecipeh: null,
+                        currentRecipeh: currentRecipeh,
                         visitedRecipehs: [],
                         filter: "Alles",
                         searchTerm: "",
@@ -118,9 +136,27 @@ renderWithProviders(
 
 });
 
-test("Clicking reload button should navigate to the root and dispatch(resetAll)", ()=>{
+test("Clicking reload button should navigate to the root", ()=>{
     const filteredRecipehs:[] = [];  
-renderWithProviders(
+    const currentRecipeh =     {
+        id: 5,
+        naam: 'Zalm Broccoli Pasta',
+        ingredienten: ['zalmsnippers', 'brocolli', 'ui', 'knoflook', 'slagroom', 'italiaanse Kruiden', 'pasta'],
+        voorkeur: 'vis',
+        kooktijd: 15,
+        categorie: 'pasta',
+        picture: null,
+        instructie: ['Zet water op voor de pasta',
+                    'Knoflook & ui in de koekenpan', 
+                    'Voeg de brocolli toe', 
+                    'Snijd de zalm in zalmsnippers en voeg toe',
+                    'Voeg de italiaanse kruiden toe',
+                    'Als het water kookt, doe je de pasta erin',
+                  'Voeg de slagroom toe',
+                'Zet de saus op een laag vuur, deze is nu klaar',
+                'Voeg de pasta toe aan de saus als deze klaar is. Roer door en serveer. Eet smakelijk!' ]
+      }
+    const { getByText } = renderWithProviders(
         <>  
             <RandomButton />
             <RecipehContainer /> 
@@ -131,7 +167,7 @@ renderWithProviders(
                     recipehs: {
                         allRecipehs: [],
                         filteredRecipehs: filteredRecipehs, 
-                        currentRecipeh: null,
+                        currentRecipeh: currentRecipeh,
                         visitedRecipehs: [],
                         filter: "Alles",
                         searchTerm: "",
@@ -140,8 +176,7 @@ renderWithProviders(
         }, route: "/recipehs/5"
     } 
     )
-    console.log(document.location.pathname)
-    
+
     const randomButton = screen.getByRole('button', {name: /feed/i});
 
     //click the random button
@@ -156,5 +191,81 @@ renderWithProviders(
     reloadButton.click();
    })
 
-   console.log(document.location.pathname)
+   expect(document.location.pathname === "/").toBeTruthy();
+});
+
+
+test("Renders a different Recipeh if the random button is clicked Again", ()=>{
+    const filteredRecipehs:RecepehBook = [    {
+        id: 1,
+        naam: 'Paddenstoelen Pasta',
+        ingredienten: ['pasta','paddenstoelen','citroen', 'creme fraiche', ],
+        voorkeur: 'vega',
+        kooktijd: 15,
+        categorie: 'pasta',
+        picture: "/images/pasta-paddenstoelen.jpg", 
+        instructie: ['Maak de paddenstoelen schoon door het vuil eraf te vegen met een keukenpapiertje.', 'Snijd de paddenstoelen in stukjes', 'Kook ondertussen de pasta', 'Verhit olijfolie in de koekenpan en bak de paddenstoelen met een beetje zout']
+        },];  
+    const currentRecipeh =     {
+        id: 5,
+        naam: 'Zalm Broccoli Pasta',
+        ingredienten: ['zalmsnippers', 'brocolli', 'ui', 'knoflook', 'slagroom', 'italiaanse Kruiden', 'pasta'],
+        voorkeur: 'vis',
+        kooktijd: 15,
+        categorie: 'pasta',
+        picture: null,
+        instructie: ['Zet water op voor de pasta',
+                    'Knoflook & ui in de koekenpan', 
+                    'Voeg de brocolli toe', 
+                    'Snijd de zalm in zalmsnippers en voeg toe',
+                    'Voeg de italiaanse kruiden toe',
+                    'Als het water kookt, doe je de pasta erin',
+                  'Voeg de slagroom toe',
+                'Zet de saus op een laag vuur, deze is nu klaar',
+                'Voeg de pasta toe aan de saus als deze klaar is. Roer door en serveer. Eet smakelijk!' ]
+      }
+    const { getByText } = renderWithProviders(
+        <>  
+            <RandomButton />
+            <RecipehContainer /> 
+        </>
+        , {
+            //set the initialstate to filteredRecipehs = [];
+            preloadedState: {
+                    recipehs: {
+                        allRecipehs: [],
+                        filteredRecipehs: filteredRecipehs, 
+                        currentRecipeh: currentRecipeh,
+                        visitedRecipehs: [],
+                        filter: "Alles",
+                        searchTerm: "",
+                        searchResult: []
+                    }
+        }, route: "/recipehs/5"
+    } 
+    )
+
+    const firstRoute = document.location.pathname;
+    // const recipeh1Title = screen.queryByRole('heading', {name: /zalm/i});
+    const title1 = screen.getByTitle("realRecipehTitle");
+    const title1Value = title1.innerHTML;
+
+    const randomButton = screen.getByRole('button', {name: /feed/i});
+
+    //click the random button
+    act(()=>{
+        randomButton.click();
+    })
+
+    const secondRoute = document.location.pathname;
+    expect(secondRoute).not.toBe(firstRoute);
+    // const recipeh2Title = screen.queryByRole('heading', {name: /zalm/i})
+    // expect(recipeh2Title === null).toBeTruthy();
+
+    const title2 = screen.getByTitle("realRecipehTitle");
+
+    expect(title1Value).not.toEqual(title2.innerHTML); 
+
+
+
 });
