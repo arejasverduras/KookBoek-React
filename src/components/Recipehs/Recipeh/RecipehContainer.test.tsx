@@ -78,8 +78,6 @@ renderWithProviders(
     } 
     )
     
-
-    
     const randomButton = screen.getByRole('button', {name: /feed/i});
 
     //click the random button
@@ -153,7 +151,7 @@ test("Clicking reload button should navigate to the root", ()=>{
                 'Zet de saus op een laag vuur, deze is nu klaar',
                 'Voeg de pasta toe aan de saus als deze klaar is. Roer door en serveer. Eet smakelijk!' ]
       }
-    const { getByText } = renderWithProviders(
+    renderWithProviders(
         <>  
             <RandomButton />
             <RecipehContainer /> 
@@ -191,10 +189,68 @@ test("Clicking reload button should navigate to the root", ()=>{
    expect(document.location.pathname === "/").toBeTruthy();
 });
 
+test("Clicking reload button should allow you to start over", ()=>{
+    const filteredRecipehs:[] = [];  
+    const currentRecipeh =     {
+        id: 5,
+        naam: 'Zalm Broccoli Pasta',
+        ingredienten: ['zalmsnippers', 'brocolli', 'ui', 'knoflook', 'slagroom', 'italiaanse Kruiden', 'pasta'],
+        voorkeur: 'vis',
+        kooktijd: 15,
+        categorie: 'pasta',
+        picture: null,
+        instructie: ['Zet water op voor de pasta',
+                    'Knoflook & ui in de koekenpan', 
+                    'Voeg de brocolli toe', 
+                    'Snijd de zalm in zalmsnippers en voeg toe',
+                    'Voeg de italiaanse kruiden toe',
+                    'Als het water kookt, doe je de pasta erin',
+                  'Voeg de slagroom toe',
+                'Zet de saus op een laag vuur, deze is nu klaar',
+                'Voeg de pasta toe aan de saus als deze klaar is. Roer door en serveer. Eet smakelijk!' ]
+      }
+    renderWithProviders(
+        <>  
+            <RandomButton />
+            <RecipehContainer /> 
+        </>
+        , {
+            //set the initialstate to filteredRecipehs = [];
+            preloadedState: {
+                    recipehs: {
+                        allRecipehs: [],
+                        filteredRecipehs: filteredRecipehs, 
+                        currentRecipeh: currentRecipeh,
+                        visitedRecipehs: [],
+                        filter: "Alles",
+                        searchTerm: "",
+                        searchResult: []
+                    }
+        }, route: "/recipehs/5"
+    } 
+    )
+
+    const randomButton = screen.getByRole('button', {name: /feed/i});
+
+    //click the random button
+    act(()=>{
+        randomButton.click();
+    })
+
+    //check if the desired text is in the scree
+    const reloadButton = screen.getByRole('button', {name: /reload/i});
+
+   act(() => {
+    reloadButton.click();
+   })
+
+   screen.getByText("Hit the button!")
+});
+
 
 test("Renders a different Recipeh if the random button is clicked Twice", ()=>{
 
-    const { getByText } = renderWithProviders(
+   renderWithProviders(
         <>  
             <RandomButton />
             <RecipehContainer /> 
