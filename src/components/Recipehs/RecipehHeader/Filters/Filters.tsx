@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { setFilter, selectFilter } from "../../recipehSlice";
+import { setFilter, selectFilter, randomRecipeh } from "../../recipehSlice";
 import { capitalize } from "../../../../features/recipehFeatures";
 
 export const Filters = () => {
@@ -9,6 +9,7 @@ export const Filters = () => {
 
     const toggleFilter = ({target}:any) => {
         dispatch(setFilter(target.value))
+        dispatch(randomRecipeh());
     }
 
     //later: create a filters object

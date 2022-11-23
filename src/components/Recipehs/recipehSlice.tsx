@@ -18,7 +18,7 @@ export const initialState: RecipehsState = {
     filteredRecipehs: userRecipehBook,
     currentRecipeh: null,
     visitedRecipehs: [],
-    filter: "Alles",
+    filter: "alles",
     searchTerm: "",
     searchResult: []
 }
@@ -63,7 +63,7 @@ export const recipehSlice = createSlice({
                 state.filteredRecipehs = state.allRecipehs.filter(recipeh => recipeh.voorkeur === state.filter);
             }
            
-            recipehSlice.caseReducers.randomRecipeh(state);
+            // recipehSlice.caseReducers.randomRecipeh(state);
         },
         setSearchTerm: (state, action) => {
             state.searchTerm = action.payload;

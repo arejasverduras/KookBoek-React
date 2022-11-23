@@ -293,7 +293,7 @@ test("Renders a different Recipeh if the random button is clicked Twice", ()=>{
 
     const title2 = screen.getByTitle("realRecipehTitle");
     const title2Value = title2.innerHTML
-    console.log(title1Value);
-    console.log(title2Value);
+    // console.log(title1Value);
+    // console.log(title2Value);
     expect(title1Value).not.toEqual(title2Value); 
 });
