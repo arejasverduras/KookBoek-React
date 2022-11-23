@@ -3,10 +3,9 @@ import {  screen } from '@testing-library/react';
 import { renderWithProviders } from '../../../utils-test';
 import { RandomButton } from '../RandomButton/RandomButton';
 import { RecipehContainer } from './RecipehContainer';
+import { userRecipehBook } from '../../../database';
 import type { RecepehBook } from '../../../database';
 import { act } from 'react-dom/test-utils';
-
-
 
 test("Renders 'Hit the Button' if no recipeh is selected / on initial load", ()=>{
     renderWithProviders(
@@ -119,8 +118,6 @@ renderWithProviders(
     } 
     )
     
-
-    
     const randomButton = screen.getByRole('button', {name: /feed/i});
 
     //click the random button
@@ -195,35 +192,8 @@ test("Clicking reload button should navigate to the root", ()=>{
 });
 
 
-test("Renders a different Recipeh if the random button is clicked Again", ()=>{
-    const filteredRecipehs:RecepehBook = [    {
-        id: 1,
-        naam: 'Paddenstoelen Pasta',
-        ingredienten: ['pasta','paddenstoelen','citroen', 'creme fraiche', ],
-        voorkeur: 'vega',
-        kooktijd: 15,
-        categorie: 'pasta',
-        picture: "/images/pasta-paddenstoelen.jpg", 
-        instructie: ['Maak de paddenstoelen schoon door het vuil eraf te vegen met een keukenpapiertje.', 'Snijd de paddenstoelen in stukjes', 'Kook ondertussen de pasta', 'Verhit olijfolie in de koekenpan en bak de paddenstoelen met een beetje zout']
-        },];  
-    const currentRecipeh =     {
-        id: 5,
-        naam: 'Zalm Broccoli Pasta',
-        ingredienten: ['zalmsnippers', 'brocolli', 'ui', 'knoflook', 'slagroom', 'italiaanse Kruiden', 'pasta'],
-        voorkeur: 'vis',
-        kooktijd: 15,
-        categorie: 'pasta',
-        picture: null,
-        instructie: ['Zet water op voor de pasta',
-                    'Knoflook & ui in de koekenpan', 
-                    'Voeg de brocolli toe', 
-                    'Snijd de zalm in zalmsnippers en voeg toe',
-                    'Voeg de italiaanse kruiden toe',
-                    'Als het water kookt, doe je de pasta erin',
-                  'Voeg de slagroom toe',
-                'Zet de saus op een laag vuur, deze is nu klaar',
-                'Voeg de pasta toe aan de saus als deze klaar is. Roer door en serveer. Eet smakelijk!' ]
-      }
+test("Renders a different Recipeh if the random button is clicked Twice", ()=>{
+
     const { getByText } = renderWithProviders(
         <>  
             <RandomButton />
@@ -234,38 +204,40 @@ test("Renders a different Recipeh if the random button is clicked Again", ()=>{
             preloadedState: {
                     recipehs: {
                         allRecipehs: [],
-                        filteredRecipehs: filteredRecipehs, 
-                        currentRecipeh: currentRecipeh,
+                        filteredRecipehs: userRecipehBook, 
+                        currentRecipeh: null,
                         visitedRecipehs: [],
                         filter: "Alles",
                         searchTerm: "",
                         searchResult: []
                     }
-        }, route: "/recipehs/5"
+        }, route: "/"
     } 
     )
+    
+    //get the random button
+    const randomButton = screen.getByRole('button', {name: /feed/i});
+      //click the random button
+      act(()=>{
+        randomButton.click();
+    })
 
     const firstRoute = document.location.pathname;
     // const recipeh1Title = screen.queryByRole('heading', {name: /zalm/i});
     const title1 = screen.getByTitle("realRecipehTitle");
     const title1Value = title1.innerHTML;
 
-    const randomButton = screen.getByRole('button', {name: /feed/i});
-
-    //click the random button
+    //click the random button again
     act(()=>{
         randomButton.click();
     })
 
     const secondRoute = document.location.pathname;
     expect(secondRoute).not.toBe(firstRoute);
-    // const recipeh2Title = screen.queryByRole('heading', {name: /zalm/i})
-    // expect(recipeh2Title === null).toBeTruthy();
 
     const title2 = screen.getByTitle("realRecipehTitle");
-
-    expect(title1Value).not.toEqual(title2.innerHTML); 
-
-
-
+    const title2Value = title2.innerHTML
+    console.log(title1Value);
+    console.log(title2Value);
+    expect(title1Value).not.toEqual(title2Value); 
 });
