@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { renderWithProviders } from './utils-test';
-import { Outlet } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Recipehs } from './components/Recipehs/Recipehs';
 import { RecipehContainer } from './components/Recipehs/Recipeh/RecipehContainer';
 import App from './App';

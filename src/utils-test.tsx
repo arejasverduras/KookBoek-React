@@ -35,7 +35,11 @@ export function renderWithProviders(
   window.history.pushState({}, 'Test page', route)
   
   function Wrapper({ children }:PropsWithChildren) {
-    return <Router><Provider store={store}>{children}</Provider></Router>;
+    return <Provider store={store}>
+        <Router>
+          {children}
+        </Router>
+      </Provider>;
   }
 
   // Return an object with the store and all of RTL's query functions

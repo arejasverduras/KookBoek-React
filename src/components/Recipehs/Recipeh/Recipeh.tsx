@@ -7,7 +7,7 @@ export const Recipeh =({current}:any) => {
     const instructionList = current.instructie.map((instructie:string, index:number)=> <li key={index}>{instructie}</li>);
 
     return (
-        <div className="recipeh">
+        <div className="recipeh" title="recipeh">
             <h1 id="recipehTitle">{current.naam}</h1>
             <img src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
             <div className="recipehMetaList">
