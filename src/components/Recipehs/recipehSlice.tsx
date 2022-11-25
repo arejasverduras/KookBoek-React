@@ -10,7 +10,8 @@ export interface RecipehsState {
     visitedRecipehs: number[];
     filter: string // or string[] | []
     searchTerm: string,
-    searchResult: Recepeh[]
+    searchResult: Recepeh[],
+    favorites: number[]
 }
 
 export const initialState: RecipehsState = {
@@ -20,7 +21,8 @@ export const initialState: RecipehsState = {
     visitedRecipehs: [],
     filter: "alles",
     searchTerm: "",
-    searchResult: []
+    searchResult: [],
+    favorites: [2]
 }
 
 export const recipehSlice = createSlice({
@@ -44,7 +46,7 @@ export const recipehSlice = createSlice({
         }, 
         addToVisited: (state, action) => {
             if (!state.visitedRecipehs.includes(action.payload)){
-            state.visitedRecipehs.push(action.payload);
+                state.visitedRecipehs.push(action.payload);
             }
         },
         setCurrentRecipeh: (state, action) => {
@@ -86,13 +88,23 @@ export const recipehSlice = createSlice({
             state.visitedRecipehs = [];
             state.filteredRecipehs = userRecipehBook;
             state.filter = "alles"
+        },
+        addFavorite: (state,action) => {
+            if (!state.favorites.includes(action.payload)){
+            state.favorites.push(action.payload)
+        }
+        },
+        removeFavorite: (state, action) => {
+            let foundIndex = state.favorites.indexOf(action.payload);
+            if (foundIndex >= 0)
+                state.favorites.splice(foundIndex, 1)
         }
     },  
     extraReducers: {}
 });
 
 //export recucer actions
-export const { randomRecipeh, addToVisited, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, resetAll} = recipehSlice.actions;
+export const { randomRecipeh, addToVisited, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, resetAll, addFavorite, removeFavorite} = recipehSlice.actions;
 
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
@@ -101,6 +113,6 @@ export const selectAllRecipehs = (state: RootState) => state.recipehs.allRecipeh
 export const selectFilter = (state: RootState) => state.recipehs.filter;
 export const selectSearchTerm = (state: RootState) => state.recipehs.searchTerm;
 export const selectSearchResult = (state: RootState) => state.recipehs.searchResult;
-
+export const selectFavorites = (state: RootState) => state.recipehs.favorites;
 
 export default recipehSlice.reducer;

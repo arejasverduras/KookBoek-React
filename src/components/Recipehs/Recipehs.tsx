@@ -4,12 +4,14 @@ import { VisitedList } from "./VisitedList/VisitedList";
 import { RecipehHeader } from "./RecipehHeader/RecipehHeader";
 import { RecipehContainer } from "./Recipeh/RecipehContainer";
 import { SearchResult } from "./RecipehHeader/Search/SearchResult/SearchResult";
+import { FavoritesList } from "../FavoritesList/FavoritesList";
 
 export const Recipehs = () => {
     return (
         <>
             <RecipehHeader />
             <SearchResult />
+            <FavoritesList />
             <RandomButton />
             <RecipehContainer />
             <VisitedList />

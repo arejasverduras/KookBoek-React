@@ -9,6 +9,7 @@ export const Recipeh =({current}:any) => {
     return (
         <div className="recipeh" title="recipeh">
             <h1 id="recipehTitle" title="realRecipehTitle">{current.naam}</h1>
+            <p title="recipehId">{current.id}</p>
             <img src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
             <div className="recipehMetaList">
                 <div >{current.voorkeur}</div>
