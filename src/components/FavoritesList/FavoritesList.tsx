@@ -17,7 +17,7 @@ export const FavoritesList = () => {
         // }
         const favoritesListItems = favorites.map((favoriteId, index) => 
                 // <RecipehTile title="favoritesListItem" id={favoriteId} showFavorite={true}/>
-                <FavoritesTile title="favoritesListItem" id={favoriteId} showFavorite={true}/>
+                <FavoritesTile key={favoriteId} title="favoritesListItem" id={favoriteId} showFavorite={true}/>
         )
 
     return(

@@ -186,11 +186,12 @@ a {
   
 }
 
-.favoritesList h3 {
+.recipehTile h3 {
   width: 100%;
   padding: 10px;
   background-color: rgb(255, 162, 0);
   color: white;
+  border-radius: 5px;
 }
 
 .favoritesList .FavoritesButton {

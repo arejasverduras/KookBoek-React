@@ -27,11 +27,18 @@ export const RecipehTile = ({title, id, resetHandler, showFavorite}:any)=>{
     
     if (recipehById !== undefined){
         return (
-            <li className="recipehTile" title={title? `favorite ${recipehById.naam}`: ""} onClick={clickHandler}>
+            <div style={{background: `url(${recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture})`,
+            backgroundSize: 'cover'
+            }} 
+                className="recipehTile" 
+                title={title? recipehById.naam: ""} 
+                onClick={clickHandler}>
+          
                 <h3 title={title? title: ""}>{recipehById.naam}</h3>
-                <img src={recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture} alt="" />
+                {/* <img src={recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture} alt="" /> */}
                 {showFavorite? <ToggleFavoriteButton className="favoritesListHeart" id={id} /> : null }
-            </li>
+          
+            </div>
         )
     } else {
         return (

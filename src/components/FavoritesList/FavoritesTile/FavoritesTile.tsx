@@ -24,7 +24,7 @@ export const FavoritesTile = ({title, id, showFavorite}:any) => {
 
     if (recipehById !== undefined){
         return (
-                <div style={{background: `url(${recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture})`,
+                <li style={{background: `url(${recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture})`,
                             backgroundSize: 'cover'
                             }} 
                     className="recipehTile" 
@@ -33,7 +33,7 @@ export const FavoritesTile = ({title, id, showFavorite}:any) => {
                     <h3 title={title? title: ""}>{recipehById.naam}</h3>
                     {/* <img src={recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture} alt="" /> */}
                     {showFavorite? <ToggleFavoriteButton className="favoritesListHeart" id={id} /> : null }
-                </div>
+                </li>
 
 
         )
