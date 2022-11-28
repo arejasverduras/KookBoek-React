@@ -10,7 +10,7 @@ export const FavoritesList = () => {
     const favorites = useAppSelector(selectFavorites);
     const favoritesInTheList = favorites.length > 0? true : false;
 
-    const [showFavorites, toggleFavorites] = useState(true);
+    const [showFavorites, toggleFavorites] = useState(false);
 
     const toggleFavoritesHandler = () => {
         toggleFavorites(showFavorites? false: true)
