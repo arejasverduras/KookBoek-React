@@ -24,10 +24,10 @@ export const RecipehContainer = () => {
         if (current)
             {
             const title = document.getElementById("recipehTitle");
-                // if (title !== null )
-                //     {
-                //     title.scrollIntoView({behavior: 'smooth'});
-                //     }
+                if (title !== null )
+                    {
+                    title.scrollIntoView({behavior: 'smooth'});
+                    }
         }
         else {
             return
@@ -55,15 +55,12 @@ export const RecipehContainer = () => {
         }    
     },[id]);
 
-        useEffect(()=>{
-           
-        },[id])
 
-        useEffect(()=>{
-            if(typeof current !== 'string' && current !== null){
-                dispatch(addToVisited(current.id));
-            }
-        },[current]);
+    useEffect(()=>{
+        if(typeof current !== 'string' && current !== null){
+            dispatch(addToVisited(current.id));
+        }
+    },[current]);
 
     if (typeof current === 'string'){
         return (
