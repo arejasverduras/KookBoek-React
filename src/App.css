@@ -240,7 +240,7 @@ a {
 }
 
 .faHeartPlus {
-  color: black;
+  color: rgba(0, 0, 0, 0.605);
   transition: all 0.5s;
 
 }
@@ -261,7 +261,7 @@ a {
 }
 
 .faHeartMinus:hover {
-  color: black;
+  color: rgba(0, 0, 0, 0.605);
   transform: rotateY(180deg);
 }
 
