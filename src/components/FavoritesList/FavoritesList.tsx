@@ -1,23 +1,22 @@
 import React from "react";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { selectFavorites, removeFavorite } from "../Recipehs/recipehSlice";
+import { useAppSelector } from "../../app/hooks";
+import { selectFavorites } from "../Recipehs/recipehSlice";
 import { RecipehTile } from "../Recipehs/VisitedList/RecipehTile/RecipehTile";
+import { ToggleFavoriteButton } from "./toggleFavoriteButton/toggleFavortieButton";
 
 
 export const FavoritesList = () => {
     const favorites = useAppSelector(selectFavorites);
-    const dispatch = useAppDispatch();
 
     const favoritesInTheList = favorites.length > 0? true : false;
     
     if (favoritesInTheList){
-        const removeFavoriteButtonClickHanlder = (id:number) => {
-            dispatch(removeFavorite(id));
-        }
+        // const removeFavoriteButtonClickHanlder = (id:number) => {
+        //     dispatch(removeFavorite(id));
+        // }
         const favoritesListItems = favorites.map((favoriteId, index) => 
         <div key={index}>
-                <RecipehTile title="favoritesListItem" id={favoriteId} />
-                <button title="removeFavorite" onClick={()=>removeFavoriteButtonClickHanlder(favoriteId)}>Remove</button>
+                <RecipehTile title="favoritesListItem" id={favoriteId} showFavorite={true}/>
         </div>
         )
 
