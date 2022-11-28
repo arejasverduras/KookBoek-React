@@ -4,7 +4,7 @@ import { renderWithProviders } from '../../utils-test';
 import { act } from 'react-dom/test-utils';
 import { userRecipehBook } from '../../database';
 
-import reducer, {randomRecipeh, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, initialState, addToVisited, addToRecipehHash} from './recipehSlice';
+import reducer, {fillRecipehHash, randomRecipeh, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, initialState, addToVisited, addToRecipehHash} from './recipehSlice';
 
  
 test('should return the initial state', ()=>{
@@ -139,12 +139,33 @@ test('should NOT add a recipeh s id to visited list if it is already visited', (
  }
 )
 
+test('calling fillHash should fill the recipehHash with all indexes from allRecipehs', ()=>{
+    const prevState = {
+        ...initialState
+    }
+
+    const expectedState = {
+        ...prevState,
+        recipehHash: {
+            1:0,
+            2:1,
+            3:2,
+            4:3,
+            5:4
+        }
+    }
+
+    const actualState = reducer(prevState, fillRecipehHash());
+
+    expect(actualState).toEqual(expectedState);
+
+})
+
 test('should be able to look up the recipehs index FAST using the recipehHash', ()=>{
     const previousState = {
         ...initialState,
-
-
     }
+
     const expectedState = {
         ...previousState,
         recipehHash: {

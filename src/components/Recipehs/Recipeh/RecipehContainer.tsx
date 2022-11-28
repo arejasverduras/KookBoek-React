@@ -1,6 +1,6 @@
 import React , {useEffect} from "react";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
-import { selectCurrentRecipeh, setCurrentRecipeh, addToVisited, resetAll } from "../recipehSlice";
+import { selectCurrentRecipeh, setCurrentRecipeh, addToVisited, resetAll, fillRecipehHash } from "../recipehSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { Recipeh } from "./Recipeh";
 
@@ -13,6 +13,8 @@ export const RecipehContainer = () => {
  
     let id = Number(params.recipehId);
 
+
+
     const clickHandler = () => {
         navigate("/");
         dispatch(resetAll());
@@ -22,10 +24,10 @@ export const RecipehContainer = () => {
         if (current)
             {
             const title = document.getElementById("recipehTitle");
-            // if (title !== null )
-            //     {
-            //     title.scrollIntoView({behavior: 'smooth'});
-            //     }
+                // if (title !== null )
+                //     {
+                //     title.scrollIntoView({behavior: 'smooth'});
+                //     }
         }
         else {
             return
@@ -51,7 +53,7 @@ export const RecipehContainer = () => {
         if (id !== undefined) {
             dispatch(setCurrentRecipeh(id));
         }    
-        },[id]);
+    },[id]);
 
         useEffect(()=>{
            

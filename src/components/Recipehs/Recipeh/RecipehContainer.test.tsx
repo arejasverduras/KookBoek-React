@@ -9,6 +9,15 @@ import { Filters } from '../RecipehHeader/Filters/Filters';
 import { act } from 'react-dom/test-utils';
 import { initialState } from '../recipehSlice';
 
+const filledHash = 
+    {
+        1:0,
+        2:1,
+        3:2,
+        4:3,
+        5:4
+    };
+
 
 test("Renders 'Hit the Button' if no recipeh is selected / on initial load", ()=>{
     renderWithProviders(
@@ -24,6 +33,36 @@ test("Renders a Recipeh if a recipeh is selected by clicking the random button",
             <RandomButton />
             <RecipehContainer /> 
         </>
+        
+    )
+    // screen.debug(screen.getByRole('button', {id: /randomButton/i}));
+    const randomButton = screen.getByRole('button', {name: /feed/i});
+    // const randomButton = screen.getByTitle("random");
+
+    
+    act(()=>{
+        randomButton.click();
+    })
+    screen.getByTitle("recipeh")
+    screen.getByRole("heading", {name: "Ingredienten"})
+    
+});
+
+test("Renders a Recipeh FASTER using the recipehHash when clicking the random button", ()=>{
+    renderWithProviders(
+        <>  
+            <RandomButton />
+            <RecipehContainer /> 
+        </>,
+                {
+                    //set the initialstate to filteredRecipehs = [];
+                    preloadedState: {
+                        recipehs: {
+                            ...initialState,
+                            recipehHash: filledHash
+                        }
+                }, route: "/"
+            }
         
     )
     // screen.debug(screen.getByRole('button', {id: /randomButton/i}));
@@ -195,7 +234,7 @@ test("Renders a different Recipeh if the random button is clicked Twice", ()=>{
             preloadedState: {
                 recipehs: {
                     ...initialState,
-                    filteredRecipehs: userRecipehBook
+                    recipehHash: filledHash
                 }
         }, route: "/"
     } 

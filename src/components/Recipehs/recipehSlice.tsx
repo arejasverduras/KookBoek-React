@@ -37,6 +37,11 @@ export const recipehSlice = createSlice({
     name: 'recipehs',
     initialState,
     reducers: {
+        fillRecipehHash: (state) => {
+            state.allRecipehs.forEach((recipeh, index) => {
+                state.recipehHash[recipeh.id] = index
+            })
+        },
         randomRecipeh: (state) => {
             let index = randomIndex(state.filteredRecipehs);
             while(state.filteredRecipehs.length >= 1 && state.visitedRecipehs.includes(state.filteredRecipehs[index].id)){
@@ -70,7 +75,7 @@ export const recipehSlice = createSlice({
             let id = Number(action.payload);
             if(state.recipehHash[id]){
                 state.currentRecipeh = state.allRecipehs[state.recipehHash[id]]
-                console.log('rendered with Hash')
+                // console.log('rendered with Hash')
             } else {
 
                 let foundIndex:number = state.allRecipehs.findIndex(recipeh => 
@@ -78,7 +83,7 @@ export const recipehSlice = createSlice({
                 )
                 if (foundIndex >= 0)
                     {state.currentRecipeh = state.allRecipehs[foundIndex]}
-                    console.log('rendered with findIndex')
+                    // console.log('rendered with findIndex')
                 }
         },
         setFilter: (state, action) => {
@@ -128,7 +133,7 @@ export const recipehSlice = createSlice({
 });
 
 //export recucer actions
-export const { randomRecipeh, addToRecipehHash, addToVisited, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, resetAll, addFavorite, removeFavorite} = recipehSlice.actions;
+export const { fillRecipehHash, randomRecipeh, addToRecipehHash, addToVisited, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, resetAll, addFavorite, removeFavorite} = recipehSlice.actions;
 
 //create and export selectors 
 export const selectCurrentRecipeh = (state: RootState) => state.recipehs.currentRecipeh;
