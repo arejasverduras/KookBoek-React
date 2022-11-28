@@ -9,14 +9,19 @@ export const Recipeh =({current}:any) => {
 
     return (
         <div className="recipeh" title="recipeh">
-            <h1 id="recipehTitle" title="realRecipehTitle">{current.naam}</h1>
-            <p title="recipehId">{current.id}</p>
-            <ToggleFavoriteButton id={current.id} />
-            <img src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
-            <div className="recipehMetaList">
-                <div >{current.voorkeur}</div>
-                <div >{current.kooktijd}</div>
-                <div>{current.categorie}</div>
+            <div className="recipehTopSection"
+                    style={{background: `url(${current.picture === null? "/images/bord-geen-fotores.png": current.picture})`,
+                    backgroundSize: 'cover'
+                    }}>
+                <ToggleFavoriteButton className="CurrentRecipehFavoriteButton" id={current.id} />
+                <h1 id="recipehTitle" title="realRecipehTitle">{current.naam}</h1>
+                
+                {/* <img src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" /> */}
+                <div className="recipehMetaList">
+                    <div >{current.voorkeur}</div>
+                    <div >{current.kooktijd}</div>
+                    <div>{current.categorie}</div>
+                </div>
             </div>
             
             <div className="recipehTextContainer">

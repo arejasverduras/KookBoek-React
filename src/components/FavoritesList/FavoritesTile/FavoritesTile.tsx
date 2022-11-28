@@ -34,8 +34,6 @@ export const FavoritesTile = ({title, id, showFavorite}:any) => {
                     {/* <img src={recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture} alt="" /> */}
                     {showFavorite? <ToggleFavoriteButton className="favoritesListHeart" id={id} /> : null }
                 </li>
-
-
         )
     } else {
         return (

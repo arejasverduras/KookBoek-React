@@ -288,9 +288,31 @@ a {
   padding-bottom: 50px;
 }
 
-.recipeh img {
+/* .recipeh img {
   max-height: 400px;
   max-width: 400px;
+} */
+
+.recipehTopSection {
+  height: 600px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+  background-repeat: none;
+  background-size: cover;
+}
+
+.recipehTopSection .FavoritesButton {
+  
+}
+
+#recipehTitle {
+  text-align: left;
+  background-color: white;
+  margin-bottom: 0;
+  padding: 10px;
 }
 
 .recipehMetaList {
