@@ -2,7 +2,8 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { addFavorite, removeFavorite, selectFavorites } from '../../Recipehs/recipehSlice';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faHeart} from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faHeartOutline } from '@fortawesome/free-regular-svg-icons';
+import { faHeart, faHeartBroken} from '@fortawesome/free-solid-svg-icons';
 
 export const ToggleFavoriteButton = ({id}:any)=> {
     const dispatch = useAppDispatch();
@@ -10,12 +11,10 @@ export const ToggleFavoriteButton = ({id}:any)=> {
     
     const isFavorite = favorites.find(favoriteId => favoriteId === id);
 
-    //logic to remove from favorites
     const handleClickRemove = () => {
         dispatch(removeFavorite(id));
     }
     
-    //logic to add to favorites
     const handleClickAdd = () => {
         dispatch(addFavorite(id));
     }
@@ -29,7 +28,7 @@ export const ToggleFavoriteButton = ({id}:any)=> {
                 title="addFavorite"
                 >
                 <FontAwesomeIcon 
-                    icon={faHeart} 
+                    icon={faHeartOutline} 
                     size="2x"
                     className='faHeartPlus'
                     />

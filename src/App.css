@@ -183,7 +183,6 @@ a {
   .favoritesList .recipehTile {
     width: 30%
   }
-  
 }
 
 .recipehTile h3 {
@@ -194,8 +193,58 @@ a {
   border-radius: 5px;
 }
 
-.favoritesList .FavoritesButton {
+/* Favorites Button */
+.FavoritesButton  {
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.879);
+  border: none;
+  box-shadow: none;
   
+}
+
+.FavoritesButton:hover {
+  box-shadow: none;
+  background-color: white;
+  top: 0;
+  left: 0;
+}
+
+.faHeartPlus {
+  color: black;
+  transition: all 0.5s;
+
+}
+
+.faHeartPlus:hover {
+  color: rgb(255, 76, 76);
+  transform: rotateY(180deg);
+
+}
+
+.faHeartPlus:active {
+  transform: rotateY(360deg);
+}
+
+.faHeartMinus {
+  color: rgb(255, 76, 76);
+  transition: all 0.5s;
+}
+
+.faHeartMinus:hover {
+  color: black;
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 425px) {
+  .faHeartPlus:hover {
+    color: white;
+    transform: none;
+  }
+
+  .faHeartMinus:hover {
+    color: rgb(255, 76, 76);
+    transform: none;
+  }
 }
 
 /* Recipeh */

@@ -40,7 +40,7 @@ export const RecipehContainer = () => {
         document.title = `Koekboek! - ${current.naam}`}
     }
 
-    useEffect(scrollToSpot, [current]);
+    // useEffect(scrollToSpot, [current]);
     useEffect(setPageTitle, [current]);
 
     useEffect(()=>{
