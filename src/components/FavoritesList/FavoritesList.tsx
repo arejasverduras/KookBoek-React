@@ -2,6 +2,7 @@ import React from "react";
 import { useAppSelector } from "../../app/hooks";
 import { selectFavorites } from "../Recipehs/recipehSlice";
 import { RecipehTile } from "../Recipehs/VisitedList/RecipehTile/RecipehTile";
+import { FavoritesTile } from "./FavoritesTile/FavoritesTile";
 import { ToggleFavoriteButton } from "./toggleFavoriteButton/toggleFavortieButton";
 
 
@@ -15,15 +16,14 @@ export const FavoritesList = () => {
         //     dispatch(removeFavorite(id));
         // }
         const favoritesListItems = favorites.map((favoriteId, index) => 
-        <div key={index}>
-                <RecipehTile title="favoritesListItem" id={favoriteId} showFavorite={true}/>
-        </div>
+                // <RecipehTile title="favoritesListItem" id={favoriteId} showFavorite={true}/>
+                <FavoritesTile title="favoritesListItem" id={favoriteId} showFavorite={true}/>
         )
 
     return(
-        <div className="FavoriteList">
+        <div className="favoritesListComponent">
             <h3>Favorites</h3>
-            <ul title="favoritesList">
+            <ul title="favoritesList" className="favoritesList">
                 {favoritesListItems}
             </ul>
         </div>  
