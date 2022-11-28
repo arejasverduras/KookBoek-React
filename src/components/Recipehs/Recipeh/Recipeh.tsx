@@ -1,5 +1,6 @@
 import React from "react";
 import { capitalize } from "../../../features/recipehFeatures";
+import { ToggleFavoriteButton } from "../../FavoritesList/toggleFavoriteButton/toggleFavortieButton";
 
 
 export const Recipeh =({current}:any) => {
@@ -10,6 +11,7 @@ export const Recipeh =({current}:any) => {
         <div className="recipeh" title="recipeh">
             <h1 id="recipehTitle" title="realRecipehTitle">{current.naam}</h1>
             <p title="recipehId">{current.id}</p>
+            <ToggleFavoriteButton id={current.id} />
             <img src={current.picture === null? "/images/bord-geen-fotores.png": current.picture} alt="" />
             <div className="recipehMetaList">
                 <div >{current.voorkeur}</div>
