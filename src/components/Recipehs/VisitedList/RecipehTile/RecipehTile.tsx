@@ -1,13 +1,22 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { selectAllRecipehs, setCurrentRecipeh, setSearchTerm } from "../../recipehSlice";
+import { selectAllRecipehs, selectRecipehHash, setCurrentRecipeh, setSearchTerm, addToRecipehHash } from "../../recipehSlice";
 
 export const RecipehTile = ({title, id, resetHandler}:any)=>{
     const dispatch = useAppDispatch();
     const allRecipehs = useAppSelector(selectAllRecipehs);
+    const recipehHash = useAppSelector(selectRecipehHash);
 
-    
-    const recipehById = allRecipehs.find(recipeh => recipeh.id === id);
+    let recipehById;
+    if (allRecipehs[recipehHash[id]] !== undefined){
+        recipehById = allRecipehs[recipehHash[id]];
+        // console.log("tile rendered with Hash!")
+    } else {
+        recipehById = allRecipehs.find(recipeh => recipeh.id === id);
+        // dispatch(addToRecipehHash(id))
+    }
+
+   
     
     const clickHandler = () => {
         dispatch(setCurrentRecipeh(id));

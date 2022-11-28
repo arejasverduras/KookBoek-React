@@ -4,8 +4,8 @@ import { renderWithProviders } from '../../utils-test';
 import { act } from 'react-dom/test-utils';
 import { userRecipehBook } from '../../database';
 
-import reducer, {randomRecipeh, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, initialState, addToVisited} from './recipehSlice';
-import exp from 'constants';
+import reducer, {randomRecipeh, setCurrentRecipeh, setFilter, setSearchTerm, getSearchResults, initialState, addToVisited, addToRecipehHash} from './recipehSlice';
+
  
 test('should return the initial state', ()=>{
        expect(reducer(undefined, {type: undefined})).toEqual(initialState) 
@@ -106,7 +106,10 @@ test('should add a recipeh s id to visited list when it is rendered', ()=>{
     }
     const expectedState = {
         ...previousState,
-        visitedRecipehs: [1]
+        visitedRecipehs: [1], 
+        recipehHash: {
+            1:0
+        }
     }
 
     const newState = reducer(previousState, addToVisited(1));
@@ -119,15 +122,37 @@ test('should add a recipeh s id to visited list when it is rendered', ()=>{
 test('should NOT add a recipeh s id to visited list if it is already visited', ()=>{
     const previousState = {
         ...initialState,
-        visitedRecipehs: [1] 
+        visitedRecipehs: [1],
+        recipehHash: {
+            1:0
+        } 
+
+    }
+    const expectedState = {
+        ...previousState
+    }
+
+    const newState = reducer(previousState, addToVisited(1));
+
+    expect(newState).toEqual(expectedState);
+
+ }
+)
+
+test('should be able to look up the recipehs index FAST using the recipehHash', ()=>{
+    const previousState = {
+        ...initialState,
+
 
     }
     const expectedState = {
         ...previousState,
-        visitedRecipehs: [1]
+        recipehHash: {
+            2:1
+        }
     }
 
-    const newState = reducer(previousState, addToVisited(1));
+    const newState = reducer(previousState, addToRecipehHash(2));
 
     expect(newState).toEqual(expectedState);
 
