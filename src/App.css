@@ -295,27 +295,32 @@ a {
 
 .recipehTopSection {
   height: 500px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  /* align-items: flex-end; */
+  max-width: 100%; 
+  padding-right: 20px;
+  text-align: right;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  
+  border-top-right-radius: 15px;
+  margin-bottom: -100px;
 }
 
-.recipehTopSection .FavoritesButton {
-  
+.CurrentRecipehFavoritesButton {
+
 }
 
 #recipehTitle {
+  /* max-width: 50%; */
   text-align: left;
-  background-color: white;
-  margin-bottom: 0;
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  z-index:2;
+  border-radius: 15px 15px 0 0;
+}
+
+.recipehTextContainer {
+  text-align: left;
+  padding: 20px;
 }
 
 .recipehMetaList {
@@ -324,11 +329,7 @@ a {
   padding: 20px;
   background-color: rgb(255, 162, 0);
   color: white;
-}
-
-.recipehTextContainer {
-  text-align: left;
-  padding: 20px;
+  margin-top: -30px;
 }
 
 @media screen and (min-width: 680px) {

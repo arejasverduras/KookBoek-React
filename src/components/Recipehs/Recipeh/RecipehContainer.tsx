@@ -23,7 +23,7 @@ export const RecipehContainer = () => {
     const scrollToSpot = () =>{
         if (current)
             {
-            const title = document.getElementById("recipehTitle");
+            const title = document.getElementById("recipehTop");
                 if (title !== null )
                     {
                     title.scrollIntoView({behavior: 'smooth'});
