@@ -68,7 +68,6 @@ export const recipehSlice = createSlice({
             if (!state.visitedRecipehs.includes(action.payload)){
                 state.visitedRecipehs.push(action.payload);
             }
-
             recipehSlice.caseReducers.addToRecipehHash(state, {payload: id, type: "addToHash"})
         },
         setCurrentRecipeh: (state, action) => {

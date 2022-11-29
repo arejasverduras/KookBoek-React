@@ -10,8 +10,7 @@ export const Recipeh =({current}:any) => {
     return (
         <div className="recipeh" title="recipeh">
             <div className="recipehTopSection"
-                    style={{background: `url(${current.picture === null? "/images/bord-geen-fotores.png": current.picture})`,
-                    backgroundSize: 'cover'
+                    style={{backgroundImage: `url(${current.picture === null? "/images/bord-geen-fotores.png": current.picture})`
                     }}>
                 <ToggleFavoriteButton className="CurrentRecipehFavoriteButton" id={current.id} />
                 <h1 id="recipehTitle" title="realRecipehTitle">{current.naam}</h1>

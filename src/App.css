@@ -294,14 +294,17 @@ a {
 } */
 
 .recipehTopSection {
-  height: 600px;
+  height: 500px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   /* align-items: flex-end; */
-  background-repeat: none;
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+
+  
 }
 
 .recipehTopSection .FavoritesButton {

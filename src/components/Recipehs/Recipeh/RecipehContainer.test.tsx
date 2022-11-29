@@ -268,7 +268,8 @@ test("Renders a different Recipeh if the random button is clicked Twice", ()=>{
 });
 
 test("Visiting an  url with recipehId should navigate to that Recipeh", ()=>{
-    const currentRecipeh = userRecipehBook[4]
+    const currentRecipeh = userRecipehBook[4]    
+    
     renderWithProviders(
         <>  
             <RandomButton />
@@ -281,6 +282,7 @@ test("Visiting an  url with recipehId should navigate to that Recipeh", ()=>{
                     recipehs: {
                         ...initialState,
                         currentRecipeh: currentRecipeh,
+                        recipehHash: filledHash
                     }
         }, route: "/recipehs/5"
     } 
@@ -291,13 +293,12 @@ test("Visiting an  url with recipehId should navigate to that Recipeh", ()=>{
 
     expect(document.location.pathname === "/recipehs/5").toBeTruthy();
 
-    const filterButton = screen.getByRole("button", {name: "Vega"});
+    const filterButton = screen.getByRole("button", {name: "Vlees"});
 
     act(()=>{
         filterButton.click();
     })
     
-    const id = screen.getByTitle("recipehId");
 
-    expect(document.location.pathname === `/recipehs/${id.innerHTML}`).toBeTruthy();
+    expect(document.location.pathname === `/recipehs/4`).toBeTruthy();
 });

@@ -24,7 +24,7 @@ export const FavoritesList = () => {
     return(
         <div className="favoritesListComponent" >
             <div  onClick={toggleFavoritesHandler} >
-              <h3 className={showFavorites? "showHideFavoritesOpen": "showHideFavoritesClosed"}>
+              <h3 title="showFavoritesButton" className={showFavorites? "showHideFavoritesOpen": "showHideFavoritesClosed"}>
                 {showFavorites? 'Hide': 'My'} Favorites <FontAwesomeIcon 
                     icon={faHeart} 
                     className={showFavorites? "faHeartPlus":"faHeartMinus"}/>

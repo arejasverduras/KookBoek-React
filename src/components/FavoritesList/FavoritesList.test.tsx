@@ -67,6 +67,13 @@ test("Should render a list of the favorites Titles", () => {
     }
     )
     
+    //open the my favorites tab
+    const favButton = screen.getByRole("heading", {name: /showFavorites/})
+
+    act(()=>{
+        favButton.click();
+    })
+
     screen.getByRole("list", {name: /favoritesList/})
     screen.getByTitle("favoritesList");
     const listItem = screen.getByTitle("favoritesListItem")
@@ -90,6 +97,14 @@ test("Clicking a favorite should render that Recipeh", () => {
     }
     )
 
+    //open the my favorites tab
+    const favButton = screen.getByRole("heading", {name: /showFavorites/})
+
+    act(()=>{
+        favButton.click();
+    })
+
+    //click the list item
     const listItem = screen.getByTitle("favoritesListItem")
 
     act(()=>{
@@ -117,6 +132,13 @@ test("should be able to remove a favorite from the list", () => {
     }
     )
 
+    //open the my favorites tab
+    const favButton = screen.getByRole("heading", {name: /showFavorites/})
+
+    act(()=>{
+        favButton.click();
+    })
+    
     screen.getByText(userRecipehBook[1].naam);
 
     const removeFavorite = screen.getByRole('button', {description: /removeFavorite/})
@@ -143,6 +165,8 @@ test("should be able to add a favorite to the list", () => {
     }
     )
 
+
+
     const recipehTitle = screen.getByTitle("realRecipehTitle");
     const addFavorite = screen.getByRole('button', {name: /addFavorite/})
 
@@ -150,6 +174,13 @@ test("should be able to add a favorite to the list", () => {
         addFavorite.click()
     })
  
+    //open the my favorites tab
+    const favButton = screen.getByRole("heading", {name: /showFavorites/})
+
+    act(()=>{
+        favButton.click();
+    })
+
     expect(screen.getByRole("listitem", {name: `favorite ${recipehTitle.innerHTML}` })).toBeInTheDocument()
 })
 
