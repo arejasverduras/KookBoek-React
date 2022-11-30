@@ -28,7 +28,7 @@ export const SearchResult = () => {
     if (searchTerm !== ""){
         return (
             <div className="searchResult">
-                <h2>Recipehs for {searchTerm}</h2>
+                {/* <h2>Recipehs for {searchTerm}</h2> */}
                 <ul className="resultList">
                     {result}
                 </ul>
