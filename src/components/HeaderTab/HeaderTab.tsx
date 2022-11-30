@@ -15,7 +15,7 @@ export const HeaderTab = ({subject, content, icon}:any) =>{
         data-testid={`showTab ${subject}`}
         title={`${capitalize(subject)}`}
         onClick={visible?()=>{}:toggleVisible} 
-        // onMouseLeave={visible?toggleVisible:()=>{}}
+        onMouseLeave={visible?toggleVisible:()=>{}}
         className={visible? `headerTab Visible ${subject}`: `headerTab Hidden ${subject} `}
     >
         {visible? 
