@@ -10,7 +10,7 @@ export const HeaderTab = ({subject, content, icon}:any) =>{
     
     return (
         <div 
-        onClick={visible? ()=>{}:toggleVisible} 
+        onClick={toggleVisible} 
         className={visible? `${subject} headerTab Visible`: `${subject} headerTab Hidden`}
     >
         {visible? 

@@ -23,10 +23,11 @@ export const RecipehContainer = () => {
     const scrollToSpot = () =>{
         if (current)
             {
-            const title = document.getElementById("recipehTop");
-                if (title !== null )
+            // const title = document.getElementById("recipehTop");
+            const button = document.getElementById("randomButton")
+                if (button !== null )
                     {
-                    title.scrollIntoView({behavior: 'smooth'});
+                    button.scrollIntoView({behavior: 'smooth'});
                     }
         }
         else {
