@@ -26,9 +26,8 @@ export const HeaderTab = ({subject, content, icon}:any) =>{
             </div>
         </>
         :
-
             <FontAwesomeIcon icon={icon} size="2x" className={`headerTabIcon ${subject}`}/>
-   
+
     }
     </div >
     )

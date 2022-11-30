@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { useAppSelector } from "../../app/hooks";
 import { selectFavorites } from "../Recipehs/recipehSlice";
 import { FavoritesTile } from "./FavoritesTile/FavoritesTile";
@@ -9,12 +9,6 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export const FavoritesList = () => {
     const favorites = useAppSelector(selectFavorites);
     const favoritesInTheList = favorites.length > 0? true : false;
-
-    // const [showFavorites, toggleFavorites] = useState(false);
-
-    // const toggleFavoritesHandler = () => {
-    //     toggleFavorites(!showFavorites)
-    // }
     
     if (favoritesInTheList){
         const favoritesListItems = favorites.map((favoriteId, index) => 
@@ -23,13 +17,6 @@ export const FavoritesList = () => {
 
     return(
         <div className="favoritesListComponent" >
-            {/* <div  onClick={toggleFavoritesHandler} >
-              <h3 title="showFavoritesButton" className={showFavorites? "showHideFavoritesOpen": "showHideFavoritesClosed"}>
-                {showFavorites? 'Hide': 'My'} Favorites <FontAwesomeIcon 
-                    icon={faHeart} 
-                    className={showFavorites? "faHeartPlus":"faHeartMinus"}/>
-                </h3>
-            </div> */}
             <ul title="favoritesList" className="favoritesList">
                 {favoritesListItems}
             </ul>
@@ -43,4 +30,4 @@ export const FavoritesList = () => {
             </div>
         )
     }
-}
+};
