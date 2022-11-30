@@ -27,7 +27,10 @@ export const RecipehContainer = () => {
             const button = document.getElementById("randomButton")
                 if (button !== null )
                     {
-                    button.scrollIntoView({behavior: 'smooth'});
+                    setTimeout(() => {
+                        button.scrollIntoView({behavior: 'smooth'});    
+                    }, 400);    
+                    
                     }
         }
         else {
