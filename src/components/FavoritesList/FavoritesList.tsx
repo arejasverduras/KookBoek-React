@@ -25,7 +25,7 @@ export const FavoritesList = () => {
         return (
             <div className="favoriteListEmpty">
                 <p>Your favorites will appear here.</p>
-                <FontAwesomeIcon icon={faHeart} className="noFavoritesHeart" size='2x' />
+                    <FontAwesomeIcon icon={faHeart} className="noFavoritesHeart" size='2x' />
                 <p> Click the Heart on a Recipeh page to add the recipeh to your favorites!</p>
             </div>
         )
