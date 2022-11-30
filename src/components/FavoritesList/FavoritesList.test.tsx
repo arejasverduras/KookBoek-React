@@ -67,13 +67,6 @@ test("Should render a list of the favorites Titles", () => {
     }
     )
     
-    //open the my favorites tab
-    const favButton = screen.getByRole("heading", {name: /showFavorites/})
-
-    act(()=>{
-        favButton.click();
-    })
-
     screen.getByRole("list", {name: /favoritesList/})
     screen.getByTitle("favoritesList");
     const listItem = screen.getByTitle("favoritesListItem")
@@ -98,7 +91,7 @@ test("Clicking a favorite should render that Recipeh", () => {
     )
 
     //open the my favorites tab
-    const favButton = screen.getByRole("heading", {name: /showFavorites/})
+    const favButton = screen.getByTestId("showTab favorites")
 
     act(()=>{
         favButton.click();
@@ -132,12 +125,6 @@ test("should be able to remove a favorite from the list", () => {
     }
     )
 
-    //open the my favorites tab
-    const favButton = screen.getByRole("heading", {name: /showFavorites/})
-
-    act(()=>{
-        favButton.click();
-    })
     
     screen.getByText(userRecipehBook[1].naam);
 
@@ -175,7 +162,7 @@ test("should be able to add a favorite to the list", () => {
     })
  
     //open the my favorites tab
-    const favButton = screen.getByRole("heading", {name: /showFavorites/})
+    const favButton = screen.getByTestId("showTab favorites")
 
     act(()=>{
         favButton.click();

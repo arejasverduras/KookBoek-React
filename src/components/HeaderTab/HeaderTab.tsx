@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {capitalize} from '../../features/recipehFeatures';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const HeaderTab = ({subject, content, icon}:any) =>{
@@ -10,6 +11,8 @@ export const HeaderTab = ({subject, content, icon}:any) =>{
     
     return (
         <div 
+        data-testid={`showTab ${subject}`}
+        title={`${capitalize(subject)}`}
         onClick={toggleVisible} 
         className={visible? `${subject} headerTab Visible`: `${subject} headerTab Hidden`}
     >
