@@ -25,6 +25,7 @@ export const HeaderTabsContainer = () => {
             subject={tabItem} 
             content={contentComponents.get(tabItem)}
             icon={iconMap.get(tabItem)}
+            clickToClose={tabItem === 'search'? false: true}
             />
         )
     

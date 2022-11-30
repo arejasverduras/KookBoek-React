@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {capitalize} from '../../features/recipehFeatures';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const HeaderTab = ({subject, content, icon}:any) =>{
+export const HeaderTab = ({subject, content, icon, clickToClose}:any) =>{
     const [visible, setVisible] = useState(false);
 
     const toggleVisible = () =>{
@@ -14,8 +14,8 @@ export const HeaderTab = ({subject, content, icon}:any) =>{
         <div 
         data-testid={`showTab ${subject}`}
         title={`${capitalize(subject)}`}
-        onClick={visible?()=>{}:toggleVisible} 
-        onMouseLeave={visible?toggleVisible:()=>{}}
+        onClick={visible?clickToClose?toggleVisible:()=>{}:toggleVisible} 
+        // onMouseLeave={visible?toggleVisible:()=>{}}
         className={visible? `headerTab Visible ${subject}`: `headerTab Hidden ${subject} `}
     >
         {visible? 
