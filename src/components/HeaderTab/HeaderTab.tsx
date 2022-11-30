@@ -15,7 +15,6 @@ export const HeaderTab = ({subject, content, icon, clickToClose}:any) =>{
         data-testid={`showTab ${subject}`}
         title={`${capitalize(subject)}`}
         onClick={visible?clickToClose?toggleVisible:()=>{}:toggleVisible} 
-        // onMouseLeave={visible?toggleVisible:()=>{}}
         className={visible? `headerTab Visible ${subject}`: `headerTab Hidden ${subject} `}
     >
         {visible? 
@@ -28,8 +27,8 @@ export const HeaderTab = ({subject, content, icon, clickToClose}:any) =>{
             </div>
             <div 
                 className={`headerTab Content ${subject}`}
-                
                 >
+                {/* renders the provided component from the content prop in HeaderTabsContainer */}
                 {content}
             </div>
         </div>
