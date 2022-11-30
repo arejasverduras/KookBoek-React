@@ -13,7 +13,7 @@ export const FavoritesList = () => {
     const [showFavorites, toggleFavorites] = useState(false);
 
     const toggleFavoritesHandler = () => {
-        toggleFavorites(showFavorites? false: true)
+        toggleFavorites(!showFavorites)
     }
     
     if (favoritesInTheList){
@@ -37,6 +37,7 @@ export const FavoritesList = () => {
     )} else {
         return (
             <>
+                {/* <FontAwesomeIcon icon={faHeart} className="faHeartPlus" /> */}
             </>
         )
     }
