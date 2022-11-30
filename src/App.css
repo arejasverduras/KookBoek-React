@@ -173,7 +173,7 @@ a {
   top:90px;
   min-height: 100vh;
   /* height: 1000px; */
-  min-width: 98vw;
+  min-width: 96vw;
   opacity:1;
   overflow-y:scroll;
   /* box-sizing:content-box; */
@@ -206,6 +206,7 @@ a {
 .headerTabIcon.favorites {
   color: rgba(255, 76, 76, 0.833);
 }
+
 
 .headerTab.Content {
   background-color: rgb(131, 171, 231);
@@ -332,6 +333,7 @@ a {
   width: 300px;
   border-radius: 15px;
   margin: 20px auto;
+  
 }
 
 .favoritesList {
@@ -343,8 +345,30 @@ a {
   margin: 0 auto;
 }
 
+
+.favoriteListEmpty {
+  padding: 20px;
+  color: rgb(35, 53, 80)
+}
+
+@keyframes heartSpin {
+  0% {
+    color: rgba(0, 0, 0, 0.605);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    color: rgb(255, 76, 76);
+    transform: rotateY(540deg);
+  }
+}
+
+.noFavoritesHeart {
+  animation: 1s infinite 400ms alternate-reverse heartSpin;
+}
+
 .favoritesList .recipehTile {
-  width: 40%;
+  /* width: 40%; */
   max-height: 150px;
   display:flex;
   flex-direction: column;
@@ -354,7 +378,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .favoritesList .recipehTile {
-    width: 30%
+    /* width: 30% */
   }
 }
 

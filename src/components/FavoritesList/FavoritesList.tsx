@@ -36,10 +36,11 @@ export const FavoritesList = () => {
         </div>  
     )} else {
         return (
-            <>
-            {/* some message here telling yo to add Favorites */}
-                {/* <FontAwesomeIcon icon={faHeart} className="faHeartPlus" /> */}
-            </>
+            <div className="favoriteListEmpty">
+                <p>Your favorites will appear here.</p>
+                <FontAwesomeIcon icon={faHeart} className="noFavoritesHeart" size='2x' />
+                <p> Click the Heart on a Recipeh page to add the recipeh to your favorites!</p>
+            </div>
         )
     }
 }
