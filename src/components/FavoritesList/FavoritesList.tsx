@@ -10,11 +10,11 @@ export const FavoritesList = () => {
     const favorites = useAppSelector(selectFavorites);
     const favoritesInTheList = favorites.length > 0? true : false;
 
-    const [showFavorites, toggleFavorites] = useState(false);
+    // const [showFavorites, toggleFavorites] = useState(false);
 
-    const toggleFavoritesHandler = () => {
-        toggleFavorites(!showFavorites)
-    }
+    // const toggleFavoritesHandler = () => {
+    //     toggleFavorites(!showFavorites)
+    // }
     
     if (favoritesInTheList){
         const favoritesListItems = favorites.map((favoriteId, index) => 
@@ -23,20 +23,21 @@ export const FavoritesList = () => {
 
     return(
         <div className="favoritesListComponent" >
-            <div  onClick={toggleFavoritesHandler} >
+            {/* <div  onClick={toggleFavoritesHandler} >
               <h3 title="showFavoritesButton" className={showFavorites? "showHideFavoritesOpen": "showHideFavoritesClosed"}>
                 {showFavorites? 'Hide': 'My'} Favorites <FontAwesomeIcon 
                     icon={faHeart} 
                     className={showFavorites? "faHeartPlus":"faHeartMinus"}/>
                 </h3>
-            </div>
+            </div> */}
             <ul title="favoritesList" className="favoritesList">
-                {showFavorites? favoritesListItems:null}
+                {favoritesListItems}
             </ul>
         </div>  
     )} else {
         return (
             <>
+            {/* some message here telling yo to add Favorites */}
                 {/* <FontAwesomeIcon icon={faHeart} className="faHeartPlus" /> */}
             </>
         )

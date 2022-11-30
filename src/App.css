@@ -136,6 +136,7 @@ a {
 .headerTabsContainer {
   display:flex;
   justify-content: center;
+
 }
 
 .headerTab {
@@ -146,6 +147,7 @@ a {
   min-width: 70px;
   margin: 0 5px;
   transition: all 400ms;
+
 }
 
 .headerTab.Hidden {
@@ -162,12 +164,15 @@ a {
   height: 70px;
   padding-top: 20px;
   opacity: 1;
+
 }
 
 .headerTab.Visible {
-  min-height: 500px;
-  min-width: 400px;
+  min-height: 100vh;
+  height: 1000px;
+  min-width: 100vw;
   opacity:1;
+  overflow-y:scroll;
 }
 
 .headerTabCross {
@@ -188,11 +193,12 @@ a {
 }
 
 .headerTab.Content {
-
+  background-color: rgb(131, 171, 231);
+  max-height: 100%;
 }
 
 .headerTab.Content.favorites {
-  background-color: rgb(131, 171, 231);
+  
 }
 
 
@@ -202,9 +208,6 @@ a {
   width: 100%;
 }
 
-
-
-
 .recipehHeaderItemsContainer {
   max-width: 1024px;
   margin: 0 auto;
@@ -212,13 +215,12 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding-bottom: 20px;
+  max-height: 100%;
 }
 
 /* Filters */
 .Filters {
   width: 100%; 
-  /* display:flex;
-  justify-content: space-between; */
   margin-top: -3px;
 }
 
@@ -294,20 +296,20 @@ a {
 /* Favorites */
 
 .favoritesListComponent {
-  display:block;
+  display:flex;
   margin-top: 100px;
   margin: 0 auto;
   padding: 1px;
-  box-shadow: rgba(131, 171, 231, 0.138) 2px 1px;
-  background-color: rgba(131, 171, 231, 0.523);
+  /* box-shadow: rgba(131, 171, 231, 0.138) 2px 1px; */
+  /* background-color: rgba(131, 171, 231, 0.523); */
 }
 
-.showHideFavoritesClosed {
+/* .showHideFavoritesClosed {
   padding: 10px;
   width: 300px;
   border-radius: 15px;
   margin: 20px auto;
-}
+} */
 
 .showHideFavoritesOpen {
   padding: 10px;
