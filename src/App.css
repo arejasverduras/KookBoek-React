@@ -136,7 +136,7 @@ a {
 .headerTabsContainer {
   display:flex;
   justify-content: center;
-
+  overflow:hidden;
 }
 
 .headerTab {
@@ -168,11 +168,26 @@ a {
 }
 
 .headerTab.Visible {
+  position:absolute;
+  left:0;
+  top:90px;
   min-height: 100vh;
-  height: 1000px;
-  min-width: 100vw;
+  /* height: 1000px; */
+  min-width: 98vw;
   opacity:1;
   overflow-y:scroll;
+  /* box-sizing:content-box; */
+  z-index:10;
+}
+
+.headerTab.Visible::-webkit-scrollbar {
+  display:none;
+}
+
+@media screen and (min-width: 768px) {
+  .headerTab.Visible {
+    min-width: 99vw;
+  }
 }
 
 .headerTabCross {
@@ -256,7 +271,7 @@ a {
   }
 
   .Filters {
-    width: 60%;
+    /* width: 60%; */
     justify-content: center;
   }
 }
