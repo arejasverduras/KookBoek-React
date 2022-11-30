@@ -136,7 +136,8 @@ a {
 .headerTabsContainer {
   display:flex;
   justify-content: center;
-  overflow:hidden;
+  /* overflow:hidden; */
+  flex-wrap:wrap;
 }
 
 .headerTab {
@@ -147,7 +148,6 @@ a {
   min-width: 70px;
   margin: 0 5px;
   transition: all 400ms;
-
 }
 
 .headerTab.Hidden {
@@ -164,20 +164,32 @@ a {
   height: 70px;
   padding-top: 20px;
   opacity: 1;
-
 }
 
-.headerTab.Visible {
+.headerTab.Hidden:active {
+  padding:0;
+}
+
+/* .headerTab.Visible {
   position:absolute;
   left:0;
   top:90px;
   min-height: 100vh;
-  /* height: 1000px; */
   min-width: 96vw;
   opacity:1;
   overflow-y:scroll;
-  /* box-sizing:content-box; */
   z-index:10;
+} */
+
+.headerTab.Visible {
+  /* position:relative;
+  top:90px;  */
+  margin: 0 auto;
+  min-height: 100vh;
+  min-width: 96vw;
+  opacity:1;
+  overflow-y:scroll;
+  z-index:9;
 }
 
 .headerTab.Visible::-webkit-scrollbar {
@@ -197,6 +209,7 @@ a {
   font-size: 1.5em;
   cursor: pointer;
   padding: 10px;
+  z-index:11;
 }
 
 .headerTabIcon {
@@ -242,7 +255,15 @@ a {
 
 /* Search */
 .search {
-  width: 100%;
+  /* min-width: 80%; */
+  max-width:100%;
+  margin: 0 auto;
+  /* padding:20px; */
+}
+
+.searchBar {
+  min-height: 150px;
+  min-width: 400px;
 }
 
 .searchBar input {
@@ -254,6 +275,7 @@ a {
   border-bottom: 1px solid rgba(131, 171, 231, 0.8);
   margin-top: 30px;
   transition: all 50ms;
+  
 }
 
 .searchBar input::placeholder {
@@ -267,10 +289,6 @@ a {
 }
 
 @media screen and (min-width: 680px) {
-  .search {
-    width: 40%;
-  }
-
   .Filters {
     /* width: 60%; */
     justify-content: center;
@@ -278,6 +296,10 @@ a {
 }
 
 /* Search Result List */
+
+.searchResultSpaceHolder {
+  min-height: 400px;
+}
 
 .searchResult {
   margin: 0 auto;
@@ -305,7 +327,7 @@ a {
 }
 
 .searchResult .resultList .recipehTile {
-  max-width: 40%;
+  /* max-width: 40%; */
   max-height: 100%;
 }
 
@@ -374,12 +396,6 @@ a {
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 75px;
-}
-
-@media screen and (min-width: 768px) {
-  .favoritesList .recipehTile {
-    /* width: 30% */
-  }
 }
 
 /* Title in recipehTile */

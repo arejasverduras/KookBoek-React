@@ -29,7 +29,7 @@ export const RecipehContainer = () => {
                     {
                     setTimeout(() => {
                         button.scrollIntoView({behavior: 'smooth'});    
-                    }, 400);    
+                    }, 200);    
                     
                     }
         }

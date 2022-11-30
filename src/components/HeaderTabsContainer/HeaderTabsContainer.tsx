@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { FavoritesList } from "../FavoritesList/FavoritesList";
 import { HeaderTab } from "../HeaderTab/HeaderTab";
 import { Filters } from "../Recipehs/RecipehHeader/Filters/Filters";
@@ -17,6 +17,7 @@ export const HeaderTabsContainer = () => {
     iconMap.set('favorites', faHeart);
     iconMap.set('filters', faFilter);
     iconMap.set('search', faSearch);
+
     
     const tabsToRender = tabItems.map((tabItem, index )=> 
         <HeaderTab 
