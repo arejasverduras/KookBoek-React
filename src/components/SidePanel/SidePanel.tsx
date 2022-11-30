@@ -3,7 +3,7 @@ import { Filters } from "../Recipehs/RecipehHeader/Filters/Filters";
 import { FavoritesList } from "../FavoritesList/FavoritesList";
 
 export const SidePanel = () => {
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
 
     const toggleVisible = () =>{
         setVisible(!visible)

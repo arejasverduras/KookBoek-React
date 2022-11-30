@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppSelector } from "../../../../app/hooks";
 import { SearchBar } from "./SearchBar/SearchBar";
 
 

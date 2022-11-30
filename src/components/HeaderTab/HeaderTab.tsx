@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const HeaderTab = ({subject}:any) =>{
+export const HeaderTab = ({subject, content, icon}:any) =>{
     const [visible, setVisible] = useState(false);
 
     const toggleVisible = () =>{
@@ -20,11 +21,11 @@ export const HeaderTab = ({subject}:any) =>{
             >
                 X
             </div>
-            <div className={`${subject} headerTab Content`}>
-                {/* <FavoritesList /> */}
+            <div className={`headerTab Content ${subject}`}>
+                {content}
             </div>
         </>
-        :null}
+        :<FontAwesomeIcon icon={icon} size="2x" className={`headerTabIcon ${subject}`}/>}
         
         
     </div >

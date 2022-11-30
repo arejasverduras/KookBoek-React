@@ -8,8 +8,7 @@ function App() {
   return (
     <div className="App" aria-label="App">
         <Header />
-        <SidePanel />
-        {/* Outlet Renders Recipehs component */}
+        {/* <SidePanel /> */}
         <Outlet /> 
     </div>
   );

@@ -131,12 +131,79 @@ a {
   cursor: pointer;
 }
 
+/* HeaderTabs */
+
+.headerTabsContainer {
+  display:flex;
+  justify-content: center;
+}
+
+.headerTab {
+  background-color: rgb(131, 171, 231);
+  border-radius: 0 0 15px 15px;
+  height: 10px;
+  min-height: 70px;
+  min-width: 70px;
+  margin: 0 5px;
+  transition: all 400ms;
+}
+
+.headerTab.Hidden {
+  height: 50px;
+  width: 70px;
+  opacity: 0.6;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding-top: 0px;
+}
+
+.headerTab.Hidden:hover {
+  height: 70px;
+  padding-top: 20px;
+  opacity: 1;
+}
+
+.headerTab.Visible {
+  min-height: 500px;
+  min-width: 400px;
+  opacity:1;
+}
+
+.headerTabCross {
+  text-align:right;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.headerTabIcon {
+  
+}
+
+.headerTabIcon.favorites {
+  color: rgba(255, 76, 76, 0.833);
+}
+
+.headerTab.Content {
+
+}
+
+.headerTab.Content.favorites {
+  background-color: rgb(131, 171, 231);
+}
+
 
 /* Recipehs page */
 .recipehHeader {
   /* background-color: rgba(131, 171, 231, 0.523); */
   width: 100%;
 }
+
+
+
 
 .recipehHeaderItemsContainer {
   max-width: 1024px;

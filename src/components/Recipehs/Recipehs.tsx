@@ -19,7 +19,7 @@ export const Recipehs = () => {
         <>
             <RecipehHeader />
             <SearchResult />
-            <FavoritesList />
+            {/* <FavoritesList /> */}
             <RandomButton />
             <RecipehContainer />
             <VisitedList />

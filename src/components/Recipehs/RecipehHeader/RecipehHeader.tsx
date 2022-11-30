@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderTabsContainer } from "./HeaderTabsContainer/HeaderTabsContainer";
+import { HeaderTabsContainer } from "../../HeaderTabsContainer/HeaderTabsContainer";
 import { Filters } from "./Filters/Filters";
 import { Search } from "./Search/Search";
 
