@@ -97,19 +97,39 @@ a {
 
 /* SidePanel */
 
-.SidePanel {
-  width: 300px;
+.sidePanel {
+  background-color: rgba(255, 162, 0, 0.95);
+  width: 90%;
   height: 80%;
+  position: absolute;
+  border: 1px solid white;
+  box-shadow: white 2px 2px;
+  top: 100px;
+  text-align: left;
+  padding: 20px;
+  transition: all 400ms;
 }
 
-.SidePanel.Visible {
-
+.sidePanel.Hidden:hover {
+  left: -75%;
 }
 
-.SidePanel.Hidden {
-
+.sidePanel.Visible {
+  left:0;
 }
 
+.sidePanel.Hidden {
+  left: -80%;
+  height: 80px;
+}
+
+.sidePanelCross {
+  text-align:right;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  cursor: pointer;
+}
 
 
 /* Recipehs page */

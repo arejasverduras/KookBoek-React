@@ -7,7 +7,7 @@ export const RecipehHeader = () => {
     return (
         <div className="recipehHeader">
             <div className="recipehHeaderItemsContainer">
-                <Filters />
+                {/* <Filters /> */}
                 <Search />
             </div>
         </div>
