@@ -2,6 +2,7 @@ import React from "react";
 import { FavoritesList } from "../FavoritesList/FavoritesList";
 import { HeaderTab } from "../HeaderTab/HeaderTab";
 import { Filters } from "../Recipehs/RecipehHeader/Filters/Filters";
+import { Search } from "../Search/Search";
 import { faHeart, faFilter, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export const HeaderTabsContainer = () => {
@@ -10,6 +11,7 @@ export const HeaderTabsContainer = () => {
     const contentComponents = new Map();
     contentComponents.set('favorites', <FavoritesList />)
     contentComponents.set('filters', <Filters />)
+    contentComponents.set('search', <Search />)
 
     const iconMap = new Map();
     iconMap.set('favorites', faHeart);

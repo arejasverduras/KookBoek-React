@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../../app/hooks";
-import { getSearchResults, selectSearchResult, selectSearchTerm, setCurrentRecipeh } from "../../../recipehSlice";
-import { RecipehTile } from "../../../VisitedList/RecipehTile/RecipehTile";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { getSearchResults, selectSearchResult, selectSearchTerm, setCurrentRecipeh } from "../../Recipehs/recipehSlice";
+import { RecipehTile } from "../../Recipehs/VisitedList/RecipehTile/RecipehTile";
 
 export const SearchResult = () => {
     const searchTerm = useAppSelector(selectSearchTerm);

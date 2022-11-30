@@ -3,8 +3,6 @@ import { RandomButton } from "./RandomButton/RandomButton";
 import { VisitedList } from "./VisitedList/VisitedList";
 import { RecipehHeader } from "./RecipehHeader/RecipehHeader";
 import { RecipehContainer } from "./Recipeh/RecipehContainer";
-import { SearchResult } from "./RecipehHeader/Search/SearchResult/SearchResult";
-import { FavoritesList } from "../FavoritesList/FavoritesList";
 import { fillRecipehHash } from "./recipehSlice";
 import { useAppDispatch } from "../../app/hooks";
 
@@ -18,8 +16,6 @@ export const Recipehs = () => {
     return (
         <>
             <RecipehHeader />
-            <SearchResult />
-            {/* <FavoritesList /> */}
             <RandomButton />
             <RecipehContainer />
             <VisitedList />

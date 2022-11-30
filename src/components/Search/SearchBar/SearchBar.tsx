@@ -1,6 +1,6 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../../../app/hooks";
-import { selectSearchTerm, setSearchTerm } from "../../../recipehSlice";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { selectSearchTerm, setSearchTerm } from "../../Recipehs/recipehSlice";
 
 export const SearchBar = () => {
     const dispatch = useAppDispatch();

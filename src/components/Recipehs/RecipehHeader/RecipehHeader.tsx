@@ -1,8 +1,5 @@
 import React from "react";
 import { HeaderTabsContainer } from "../../HeaderTabsContainer/HeaderTabsContainer";
-import { Filters } from "./Filters/Filters";
-import { Search } from "./Search/Search";
-
 
 export const RecipehHeader = () => {
     return (
@@ -10,7 +7,7 @@ export const RecipehHeader = () => {
             <div className="recipehHeaderItemsContainer">
                 <HeaderTabsContainer />
                 {/* <Filters /> */}
-                <Search />
+                {/* <Search /> */}
             </div>
         </div>
     )
