@@ -170,20 +170,7 @@ a {
   padding:0;
 }
 
-/* .headerTab.Visible {
-  position:absolute;
-  left:0;
-  top:90px;
-  min-height: 100vh;
-  min-width: 96vw;
-  opacity:1;
-  overflow-y:scroll;
-  z-index:10;
-} */
-
 .headerTab.Visible {
-  /* position:relative;
-  top:90px;  */
   margin: 0 auto;
   min-height: 100vh;
   min-width: 96vw;
@@ -233,7 +220,6 @@ a {
 
 /* Recipehs page */
 .recipehHeader {
-  /* background-color: rgba(131, 171, 231, 0.523); */
   width: 100%;
 }
 
@@ -255,10 +241,7 @@ a {
 
 /* Search */
 .search {
-  /* min-width: 80%; */
   max-width:100%;
-
-  /* padding:20px; */
 }
 
 .searchBar {
@@ -272,20 +255,21 @@ a {
   color: white;
   font-size: 2em;
   width: 70%;
-  border-bottom: 1px solid rgba(131, 171, 231, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
   margin-top: 30px;
+  padding:10px;
   transition: all 50ms;
   
 }
 
 .searchBar input::placeholder {
-  color: rgba(93, 147, 227, 0.806);
+  color: rgba(255, 255, 255, 0.471);
 }
 
 .searchBar input:focus {
   outline: none;
   font-size: 3em;
-  border-bottom: 3px solid rgba(131, 171, 231, 0.8);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
 }
 
 @media screen and (min-width: 680px) {
