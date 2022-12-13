@@ -1,13 +1,27 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {capitalize} from '../../features/recipehFeatures';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const HeaderTab = ({subject, content, icon, clickToClose}:any) =>{
+export const HeaderTab = ({subject, content, icon, clickToClose, tabsOpen, setTabsOpen}:any) =>{
     const [visible, setVisible] = useState(false);
 
     const toggleVisible = () =>{
-        setVisible(!visible)
+        // setVisible(!visible)
+        if (visible ===  false  ){
+            setVisible(true);
+            setTabsOpen(subject)
+        } else {
+            setVisible(false);
+            // setTabsOpen('none')
+        }
     }
+
+    useEffect(()=>{
+        if (visible === true && tabsOpen !== subject){
+            toggleVisible()
+        }
+    },[tabsOpen])
+
      
 
     return (

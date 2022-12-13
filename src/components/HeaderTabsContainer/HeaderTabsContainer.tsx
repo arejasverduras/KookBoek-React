@@ -18,6 +18,8 @@ export const HeaderTabsContainer = () => {
     iconMap.set('filters', faFilter);
     iconMap.set('search', faSearch);
 
+    const [tabsOpen, setTabsOpen] = useState('none');
+
     
     const tabsToRender = tabItems.map((tabItem, index )=> 
         <HeaderTab 
@@ -26,6 +28,8 @@ export const HeaderTabsContainer = () => {
             content={contentComponents.get(tabItem)}
             icon={iconMap.get(tabItem)}
             clickToClose={tabItem === 'search'? false: true}
+            tabsOpen={tabsOpen}
+            setTabsOpen={setTabsOpen}
             />
         )
     
