@@ -36,7 +36,7 @@ test("Renders a Recipeh if a recipeh is selected by clicking the random button",
         
     )
     // screen.debug(screen.getByRole('button', {id: /randomButton/i}));
-    const randomButton = screen.getByRole('button', {name: /feed/i});
+    const randomButton = screen.getByRole('button', {name: /random/i});
     // const randomButton = screen.getByTitle("random");
 
     
@@ -66,7 +66,7 @@ test("Renders a Recipeh FASTER using the recipehHash when clicking the random bu
         
     )
     // screen.debug(screen.getByRole('button', {id: /randomButton/i}));
-    const randomButton = screen.getByRole('button', {name: /feed/i});
+    const randomButton = screen.getByRole('button', {name: /random/i});
     // const randomButton = screen.getByTitle("random");
 
     
@@ -99,7 +99,7 @@ renderWithProviders(
     } 
     )
     
-    const randomButton = screen.getByRole('button', {name: /feed/i});
+    const randomButton = screen.getByRole('button', {name: /random/i});
 
     //click the random button
     act(()=>{
@@ -132,7 +132,7 @@ renderWithProviders(
     } 
     )
     
-    const randomButton = screen.getByRole('button', {name: /feed/i});
+    const randomButton = screen.getByRole('button', {name: /random/i});
 
     //click the random button
     act(()=>{
@@ -167,7 +167,7 @@ test("Clicking reload button should navigate to the root", ()=>{
     } 
     )
 
-    const randomButton = screen.getByRole('button', {name: /feed/i});
+    const randomButton = screen.getByRole('button', {name: /random/i});
 
     //click the random button
     act(()=>{
@@ -204,7 +204,7 @@ test("Clicking reload button should allow you to start over", ()=>{
     } 
     )
 
-    const randomButton = screen.getByRole('button', {name: /feed/i});
+    const randomButton = screen.getByRole('button', {name: /random/i});
 
     //click the random button
     act(()=>{
@@ -241,7 +241,7 @@ test("Renders a different Recipeh if the random button is clicked Twice", ()=>{
     )
     
     //get the random button
-    const randomButton = screen.getByRole('button', {name: /feed/i});
+    const randomButton = screen.getByRole('button', {name: /random/i});
       //click the random button
       act(()=>{
         randomButton.click();

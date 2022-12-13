@@ -6,6 +6,7 @@
   line-height: 1.7em;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
+  min-height: 100vh;
 }
 
 /* Filters, Feed me!, Reload */
@@ -40,6 +41,37 @@ button:active {
 a {
   color: black;
   text-decoration: none;
+}
+
+#randomButton {
+  background-color: rgb(255, 162, 0);
+  background-color: white;
+  color: rgb(131, 171, 231);
+  /* color: white; */
+  position: relative;
+  top:0;
+  left:0;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  padding: 20px 50px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  box-shadow: black 8px 8px;
+  margin-top: 50px;
+  transition: all 200ms;
+}
+
+#randomButton:hover {
+  box-shadow: black 12px 12px;
+  top: -4px;
+  left: -4px;
+  /* border: 3px solid white; */
+}
+
+#randomButton:active {
+  top: 5px;
+  left: 5px;
+  box-shadow: none;
 }
 
 .voorkeurButton {
@@ -96,7 +128,7 @@ a {
 
 /* SidePanel */
 
-.sidePanel {
+/* .sidePanel {
   background-color: rgba(255, 162, 0, 0.95);
   width: 90%;
   height: 80%;
@@ -128,7 +160,7 @@ a {
   font-weight: bold;
   font-size: 1.5em;
   cursor: pointer;
-}
+} */
 
 /* HeaderTabs */
 
@@ -425,6 +457,10 @@ a {
 
 /* Recipeh */
 
+#hitTheButton {
+  /* font-family: 'Amatic SC Regular'; */
+}
+
 .recipeh {
   max-width: 1024px;
   border: 1px solid rgba(131, 171, 231, 0.523);
@@ -515,10 +551,11 @@ a {
 }
 
 /* Visited Items */
-
-  .visitedList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-  }
+.visitedList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  margin:0;
+  padding: 20px;
+}

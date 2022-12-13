@@ -81,7 +81,7 @@ export const RecipehContainer = () => {
         } else {
             return (
                 <>
-                    <h1 id="recipehTitle">Hit the button!</h1>
+                    <h1 id="hitTheButton">Hit the button!</h1>
                 </>
             )
         }
