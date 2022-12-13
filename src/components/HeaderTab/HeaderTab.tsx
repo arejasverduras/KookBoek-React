@@ -6,16 +6,17 @@ export const HeaderTab = ({subject, content, icon, clickToClose, tabsOpen, setTa
     const [visible, setVisible] = useState(false);
 
     const toggleVisible = () =>{
-        // setVisible(!visible)
         if (visible ===  false  ){
             setVisible(true);
+            
+            //to know which tab is open
             setTabsOpen(subject)
         } else {
             setVisible(false);
-            // setTabsOpen('none')
         }
     }
-
+    
+    //This makes sure only one tab is visible at the same time
     useEffect(()=>{
         if (visible === true && tabsOpen !== subject){
             toggleVisible()
