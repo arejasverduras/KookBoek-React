@@ -21,6 +21,7 @@ button {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 0.4px;
   cursor: pointer;
+  border-radius: 25px;
 
 }
 
@@ -83,6 +84,7 @@ a {
   border: 2px solid white;
   border-top: none;
   color: white;
+  border-radius: 0;
 }
 
 .voorkeurButton:hover {
