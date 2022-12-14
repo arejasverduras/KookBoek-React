@@ -76,29 +76,28 @@ a {
 }
 
 .voorkeurButton {
-  background-color: #fafafa;
+  background-color: rgb(100, 147, 218);
+  border: 2px solid white;
+  box-shadow: rgb(63, 108, 176) 3px 3px;
+  color:white;
+
   opacity: 0.6;
   margin: 5px;
   font-size: 1em;
   font-style: italic;
   font-weight: normal;
-  color: rgb(63, 108, 176);
   border-radius: 15px;
   height: 100px;
   width: 100px; 
   transition: all 200ms;
-  /* box-shadow: rgb(53, 122, 226) 3px 3px; */
-  
 }
 
+
 .voorkeurButton:hover {
-  /* background-color: white;
-  color:black; */
-  box-shadow: rgb(100, 147, 218) 3px 3px;
-  border: none;
   top: -3px;
   left: -3px;
-  opacity:1;
+  opacity: 1;
+  box-shadow: rgb(63, 108, 176) 6px 6px;
 } 
 
 .voorkeurButton.active {
