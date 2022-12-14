@@ -68,10 +68,10 @@ export const RecipehContainer = () => {
 
     if (typeof current === 'string'){
         return (
-            <>
-                <h1 id="recipehTitle">No more recipehs!</h1>
+            <div className="noMoreRecipehs">
+                <h1 id="noMoreTitle">No more recipehs!</h1>
                 <button className="secondaryButton" onClick={clickHandler}>Reload</button>
-            </>
+            </div>
         )
     } else if (current !== null ){
 
