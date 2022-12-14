@@ -19,12 +19,12 @@ const filledHash =
     };
 
 
-test("Renders 'Hit the Button' if no recipeh is selected / on initial load", ()=>{
+test("Renders 'What's for dinner?' if no recipeh is selected / on initial load", ()=>{
     renderWithProviders(
         <RecipehContainer /> 
     )
 
-    screen.getByText("Hit the button!")
+    screen.getByText("What's for dinner?")
 })
 
 test("Renders a Recipeh if a recipeh is selected by clicking the random button", ()=>{
@@ -35,11 +35,8 @@ test("Renders a Recipeh if a recipeh is selected by clicking the random button",
         </>
         
     )
-    // screen.debug(screen.getByRole('button', {id: /randomButton/i}));
-    const randomButton = screen.getByRole('button', {name: /random/i});
-    // const randomButton = screen.getByTitle("random");
+    const randomButton = screen.getAllByRole('button', {name: /random/i})[0];
 
-    
     act(()=>{
         randomButton.click();
     })
@@ -65,11 +62,9 @@ test("Renders a Recipeh FASTER using the recipehHash when clicking the random bu
             }
         
     )
-    // screen.debug(screen.getByRole('button', {id: /randomButton/i}));
-    const randomButton = screen.getByRole('button', {name: /random/i});
-    // const randomButton = screen.getByTitle("random");
 
-    
+    const randomButton = screen.getAllByRole('button', {name: /random/i})[0];
+
     act(()=>{
         randomButton.click();
     })
@@ -132,7 +127,7 @@ renderWithProviders(
     } 
     )
     
-    const randomButton = screen.getByRole('button', {name: /random/i});
+    const randomButton = screen.getAllByRole('button', {name: /random/i})[0];
 
     //click the random button
     act(()=>{
@@ -204,7 +199,7 @@ test("Clicking reload button should allow you to start over", ()=>{
     } 
     )
 
-    const randomButton = screen.getByRole('button', {name: /random/i});
+    const randomButton = screen.getAllByRole('button', {name: /random/i})[0];
 
     //click the random button
     act(()=>{
@@ -218,7 +213,7 @@ test("Clicking reload button should allow you to start over", ()=>{
     reloadButton.click();
    })
 
-   screen.getByText("Hit the button!")
+   screen.getByText("What's for dinner?")
 });
 
 
@@ -241,7 +236,7 @@ test("Renders a different Recipeh if the random button is clicked Twice", ()=>{
     )
     
     //get the random button
-    const randomButton = screen.getByRole('button', {name: /random/i});
+    const randomButton = screen.getAllByRole('button', {name: /random/i})[0];
       //click the random button
       act(()=>{
         randomButton.click();

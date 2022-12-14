@@ -4,7 +4,7 @@ import { randomRecipeh, selectCurrentRecipeh } from "../recipehSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRandom } from "@fortawesome/free-solid-svg-icons";
 
-export const RandomButton = () => {
+export const RandomButton = ({name, iconColor}:any) => {
     const dispatch = useAppDispatch();
 
     const current = useAppSelector(selectCurrentRecipeh);
@@ -16,8 +16,8 @@ export const RandomButton = () => {
     }
 
     return (
-            <button id="randomButton" onClick={clickHandler} title="random" >
-                Random recipeh! <FontAwesomeIcon icon={faRandom} color='orange' />
+            <button className={name || "randomButton"} id="randomButton" onClick={clickHandler} title="random" >
+                Random recipeh! <FontAwesomeIcon icon={faRandom} color={iconColor || 'orange'} />
             </button>
     )
 }

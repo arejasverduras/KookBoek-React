@@ -44,7 +44,7 @@ a {
   text-decoration: none;
 }
 
-#randomButton {
+.randomButton {
   background-color: rgb(255, 162, 0);
   background-color: white;
   color: rgb(131, 171, 231);
@@ -62,14 +62,14 @@ a {
   transition: all 200ms;
 }
 
-#randomButton:hover {
+.randomButton:hover {
   box-shadow: black 12px 12px;
   top: -4px;
   left: -4px;
   /* border: 3px solid white; */
 }
 
-#randomButton:active {
+.randomButton:active {
   top: 5px;
   left: 5px;
   box-shadow: none;
@@ -111,10 +111,33 @@ a {
 }
 
 /* Reload Button */
-.secondaryButton {
+.secondaryButton, .firstRandomButton {
   background-color: rgb(255, 162, 0);
+  color:black;
+  padding: 20px 50px;
+  position: relative;
+  top:0;
+  left:0;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 25px;
+  box-shadow: black 8px 8px;
+  margin-top: 50px;
+  transition: all 200ms;
 }
 
+.secondaryButton:hover, .firstRandomButton:hover {
+  box-shadow: black 12px 12px;
+  top: -4px;
+  left: -4px;
+}
+
+.secondaryButton:active, .firstRandomButton:active {
+  top: 5px;
+  left: 5px;
+  box-shadow: none;
+}
 
 /* Header */
 
@@ -432,6 +455,14 @@ a {
 
 #hitTheButton {
   /* font-family: 'Amatic SC Regular'; */
+}
+
+.hitTheButton, .noMoreRecipehs {
+  background-color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 20px;
 }
 
 .recipeh {

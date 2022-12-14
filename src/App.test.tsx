@@ -31,7 +31,7 @@ test('the root should return a Hit the Button button as a recipeh', () => {
         // const route = "/recipehs/5";
         // window.history.pushState({}, 'Test page', route)
         
-        screen.getAllByText('Hit the button!');
+        screen.getAllByText("What's for dinner?");
 });
 
 
