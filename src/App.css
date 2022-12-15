@@ -149,9 +149,9 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  /* border-bottom: 3px solid rgb(163, 196, 247); */
+  border-bottom: 3px solid rgb(255, 255, 255);
   z-index: 0;
-  box-shadow: rgb(163, 196, 247) 4px 4px;
+  /* box-shadow: rgb(163, 196, 247) 4px 4px; */
 }
 
 #headerTitle {
