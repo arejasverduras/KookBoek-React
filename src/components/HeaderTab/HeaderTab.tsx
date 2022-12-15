@@ -49,7 +49,6 @@ export const HeaderTab = ({subject, content, icon, clickToClose, tabsOpen, setTa
         </div>
         :
             <FontAwesomeIcon icon={icon} size="2x" className={`headerTabIcon ${subject}`}/>
-
     }
     </div >
     )

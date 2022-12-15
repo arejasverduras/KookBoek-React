@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.669);
   background-color: rgba(131, 171, 231, 0.523);
   letter-spacing: 0.4px;
   line-height: 1.7em;
@@ -127,6 +127,7 @@ a {
   transition: all 200ms;
 }
 
+
 .secondaryButton:hover, .firstRandomButton:hover {
   box-shadow: black 12px 12px;
   top: -4px;
@@ -148,8 +149,9 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  border-bottom: 3px solid white;
+  /* border-bottom: 3px solid rgb(163, 196, 247); */
   z-index: 0;
+  box-shadow: rgb(163, 196, 247) 4px 4px;
 }
 
 #headerTitle {
@@ -174,6 +176,7 @@ a {
   min-width: 70px;
   margin: 0 5px;
   transition: all 400ms;
+
 }
 
 .headerTab.Hidden {
@@ -185,6 +188,7 @@ a {
   align-items:center;
   padding-top: 0px;
   cursor: pointer;
+  box-shadow: rgb(163, 196, 247) 4px 4px;
 }
 
 .headerTab.Hidden:hover {
@@ -555,6 +559,23 @@ a {
 }
 
 /* Visited Items */
+.visitedListContainer {
+  margin: 50px;
+  margin-bottom: 0;
+  padding-bottom: 50px;
+}
+
+.visitedListContainer h2 {
+  background-color: rgb(255, 255, 255);
+  color: rgb(131, 171, 231);
+  max-width: 270px;
+  margin: 0 auto;
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: rgb(163, 196, 247) 6px 2px;
+}
+
 .visitedList {
   display: flex;
   flex-wrap: wrap;
@@ -562,4 +583,7 @@ a {
   list-style-type: none;
   margin:0;
   padding: 20px;
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: rgb(163, 196, 247) 6px 4px;
 }

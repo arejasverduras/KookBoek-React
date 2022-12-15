@@ -12,10 +12,11 @@ export const VisitedList = () => {
         </div>)
         
     return (
-        <>
+        <div className="visitedListContainer" style={visitedList.length < 1? {display:'none'}:{}}>
+            <h2>{visitedListItems.length >0? "Visited Recipehs": ""}</h2>
             <ul className="visitedList" >
                 {visitedListItems}
             </ul>
-        </>
+        </div>
     )
 }
