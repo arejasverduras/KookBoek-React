@@ -3,9 +3,13 @@ import { capitalize } from "../../../features/recipehFeatures";
 import { faUtensils, faLeaf, faSeedling, faCow, faFish, faClock, faPastafarianism, faBowlFood } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToggleFavoriteButton } from "../../FavoritesList/toggleFavoriteButton/toggleFavortieButton";
+import { setFilter } from "../recipehSlice";
+import { useAppDispatch } from "../../../app/hooks";
 
 
 export const Recipeh =({current}:any) => {
+    const dispatch = useAppDispatch();
+
     const ingredientsList = current.ingredienten.map((ingredient:string, index:number) => <li key={index}>{capitalize(ingredient)}</li>);
     const instructionList = current.instructie.map((instructie:string, index:number)=> <li key={index}>{instructie}</li>);
 
@@ -18,6 +22,10 @@ export const Recipeh =({current}:any) => {
     iconMap.set('kooktijd', faClock);
     iconMap.set('categorie', faBowlFood)
 
+    const metaClick = () => {
+        dispatch(setFilter(current.voorkeur));
+        
+    }
 
     return (
         <div className="recipeh" title="recipeh" id="recipehTop">
@@ -32,7 +40,10 @@ export const Recipeh =({current}:any) => {
 
                 {/* Extract to component?  */}
             <div className="recipehMetaList">
-                    <div className="recipehMeta filter" ><FontAwesomeIcon icon={iconMap.get(current.voorkeur)} />{capitalize(current.voorkeur)}</div>
+                    <div 
+                        className="recipehMeta filter" 
+                        onClick={metaClick}
+                    ><FontAwesomeIcon icon={iconMap.get(current.voorkeur)} />{capitalize(current.voorkeur)}</div>
                     <div className="recipehMeta cooktime"><FontAwesomeIcon icon={iconMap.get('kooktijd')} />{current.kooktijd} min.</div>
                     <div className="recipehMeta category"><FontAwesomeIcon icon={iconMap.get('categorie')} />{capitalize(current.categorie)}</div>
             </div>
