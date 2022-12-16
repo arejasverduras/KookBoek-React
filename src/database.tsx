@@ -35,13 +35,13 @@
       },
     {
       id: 2,
-      naam: 'Frisse Salade',
-      ingredienten: ['sla', 'tomaat', 'avocado'],
-      voorkeur: 'vegan',
-      kooktijd: 10, 
-      categorie: 'salade',
-      picture: null,
-      instructie: []
+      naam: 'Kikkererwten & pasta soep',
+      ingredienten: ['olijfolie', 'knoflook', 'roosmarijn', 'tomaten', 'kipbouillon', 'kikkererwten', 'pasta'],
+      voorkeur: 'vlees',
+      kooktijd: 30, 
+      categorie: 'pasta',
+      picture: "/images/chickpea_pasta_soup.png",
+      instructie: ['Verhit de olie in een grote pan op middelmatig vuur.','Voeg de knoflook toe en sauté voor 3-4 minuten, blijf roeren zodat de knoflook niet aanbrand.','Voeg de roosmarijn toe en kook voor 2 minuten.','Voeg de tomaten toe, dek de pan af en laat 15 minuten sudderen', 'Voeg de kippenbouillon toe en laat voor nog 10 minuten sudderen.','Voeg als laatste de kikkererwten en pasta toe. Kruid en kook voor 8-10 minuten to de pasta al-dente is']
     },
     {
       id: 3,
@@ -61,7 +61,7 @@
       voorkeur: 'vlees',
       kooktijd: 60,
       categorie: 'oven',
-      picture: null,
+      picture: '/images/broccoli_zoeteaardappel.png',
       instructie: ['Snijd de zoete aardappel in plakjes, en de Brocolli in kleine roosjes', 'Doe olijfolie in de Omnia','Leg de kip als eerste in de Omnia','Bedek met de zoete aardappelschijfjes en de brocollie roosjes', 'Snijd wat knoflook in kleine stukjes en verdeel','Zet de omnia op het vuur en plaats het deksel erop. Wacht 40min. Houd de pan zoveel mogelijk dicht','Je kunt dit gerecht ook in een gewone oven maken. Gebruik dan een ovenschaal.']
     },
     {
@@ -71,7 +71,7 @@
       voorkeur: 'vis',
       kooktijd: 15,
       categorie: 'pasta',
-      picture: null,
+      picture: '/images/zalm_broccoli_pasta.png',
       instructie: ['Zet water op voor de pasta',
                   'Knoflook & ui in de koekenpan', 
                   'Voeg de brocolli toe', 

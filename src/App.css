@@ -508,11 +508,10 @@ a {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
   margin-bottom: -100px;
   border: 2px solid white;
-  border-bottom:none;
+  /* border-bottom:none; */
   box-shadow: rgba(131, 171, 231, 0.228) 5px 0px;
 }
 
@@ -548,24 +547,18 @@ a {
 .recipehTextContainer {
   text-align: left;
   padding: 20px;
-  background-color: rgba(131, 171, 231, 0.123);
-  border: 2px solid white;
-  border-top: none;
-  border-bottom-left-radius: 15px;
+  /* background-color: rgba(131, 171, 231, 0.123); */
+  /* border: 2px solid white;
+  border-top: none; */
+  /* border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  box-shadow: rgb(163, 196, 247) 6px 4px;
+  box-shadow: rgb(163, 196, 247) 6px 4px; */
 }
 
 @media screen and (min-width: 680px) {
   .recipehTextContainer {
     display:flex;
     justify-content: center;
-  }
-
-  .recipehInstructionSection {
-    margin-left: 40px;
-    max-width: 50%;
-    
   }
 }
 
@@ -574,7 +567,7 @@ a {
   border-radius: 15px;
   padding: 20px;
   margin-left: -20px;
-  margin-top: -20px;
+  margin-top: -40px;
   background-color: rgb(163, 196, 247)
 }
 
@@ -600,6 +593,13 @@ a {
   box-shadow: rgba(131, 171, 231, 0.228) 4px 5px;
   margin-right: -20px;
   margin-top: -20px;
+}
+
+@media screen and (min-width: 680px) {
+  .recipehInstructionSection {
+    margin-left: 40px;
+    max-width: 50%;   
+  }
 }
 
 .recipehInstructionSection h2 {
