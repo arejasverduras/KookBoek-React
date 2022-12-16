@@ -21,12 +21,14 @@ export const Recipeh =({current}:any) => {
 
     return (
         <div className="recipeh" title="recipeh" id="recipehTop">
+            <h1 id="recipehTitle" title="realRecipehTitle">{current.naam}</h1>
             <div className="recipehTopSection"
                     style={{backgroundImage: `url(${current.picture === null? "/images/bord-geen-fotores.png": current.picture})`
-                    }}>
+            }}>
+                
                 <ToggleFavoriteButton className="CurrentRecipehFavoriteButton" id={current.id} />
             </div>
-            <h1 id="recipehTitle" title="realRecipehTitle">{current.naam}</h1>
+            
 
                 {/* Extract to component?  */}
             <div className="recipehMetaList">

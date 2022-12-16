@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=La+Belle+Aurore&family=Unbounded:wght@500&display=swap');
+
+
+
 .App {
   text-align: center;
   color: rgba(0, 0, 0, 0.669);
@@ -7,6 +11,10 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'La Belle Aurore', cursive;
 }
 
 /* Filters, Feed me!, Reload */
@@ -407,7 +415,6 @@ a {
   background-color: rgba(255, 255, 255, 0.879);
   border: none;
   box-shadow: none;
-  
 }
 
 .FavoritesButton:hover {
@@ -471,64 +478,82 @@ a {
 
 .recipeh {
   max-width: 1024px;
-  border: 1px solid rgba(131, 171, 231, 0.523);
+  /* border: 1px solid rgba(131, 171, 231, 0.523); */
   border-radius: 15px;
-  box-shadow: rgba(131, 171, 231, 0.228) 4px 5px;
+
   margin: 0 auto;
   padding-bottom: 50px;
-  background-color: rgba(255, 255, 255, 0.85);
+  /* background-color: rgba(255, 255, 255, 0.85); */
+}
+
+#recipehTitle {
+  background-color: rgb(255, 255, 255);
+  /* color: rgb(131, 171, 231); */
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* box-shadow: rgb(163, 196, 247) 6px 2px; */
 }
 
 .recipehTopSection {
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
   height: 500px;
-  max-width: 100%; 
-  padding-right: 20px;
-  text-align: right;
+  width: 100%; 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-bottom: -100px;
+  border: 2px solid white;
+  border-bottom:none;
+  box-shadow: rgba(131, 171, 231, 0.228) 5px 0px;
 }
 
-#recipehTitle {
-  text-align: left;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  z-index:2;
-  border-radius: 15px 15px 0 0;
-}
-
-.recipehTextContainer {
-  text-align: left;
-  padding: 20px;
-  background-color: rgba(131, 171, 231, 0.123);
-
+.recipehTopSection button {
+  margin: 20px;
 }
 
 .recipehMetaList {
   display: flex;
   justify-content: flex-end;
-  /* padding: 20px; */
-  /* background-color: rgb(255, 162, 0); */
   color: white;
-  /* margin-top: -30px; */
-  margin-bottom: 0;
+  position:relative;
+  top: 20px;
+  right: 10px;
 }
 
 .recipehMeta {
-  /* background-color: rgb(255, 162, 0); */
+  background-color: white;
+  box-shadow: rgb(255, 162, 0) 2px 2px;
+  margin-right: 2px;
   color: rgb(255, 162, 0);
   display:flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: center;
   height: 90px;
   width: 90px;
   border: 2px solid white;
   border-radius: 15px;
+  
+}
+
+.recipehTextContainer {
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(131, 171, 231, 0.123);
+  border: 2px solid white;
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: rgb(163, 196, 247) 6px 4px;
 }
 
 @media screen and (min-width: 680px) {
@@ -542,6 +567,19 @@ a {
     max-width: 50%;
     
   }
+}
+
+.recipehIngredientenSection {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-left: -20px;
+  margin-top: -20px;
+  background-color: rgb(163, 196, 247)
+}
+
+.recipehIngredientenSection h2 {
+  border-bottom: 2px solid white;
 }
 
 .recipehIngredientsList {
@@ -560,6 +598,12 @@ a {
   padding: 20px;
   border-radius: 15px;
   box-shadow: rgba(131, 171, 231, 0.228) 4px 5px;
+  margin-right: -20px;
+  margin-top: -20px;
+}
+
+.recipehInstructionSection h2 {
+  border-bottom: 2px solid rgb(163, 196, 247);
 }
 
 .recipehInstructionList {
