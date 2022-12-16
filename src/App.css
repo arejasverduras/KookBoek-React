@@ -401,9 +401,14 @@ a {
 .recipehTile h3 {
   width: 100%;
   padding: 10px;
+  padding-top: 20px;
+  border-left: 2px solid rgb(255, 162, 0);
+  border-right: 2px solid rgb(163, 196, 247);
   background-color: rgb(255, 162, 0);
-  color: white;
+  background-color: white;
+  /* color: white; */
   border-radius: 5px;
+  font-size: 2em;
 }
 
 /* Favorites Button */

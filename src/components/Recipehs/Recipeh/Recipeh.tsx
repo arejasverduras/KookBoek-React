@@ -24,7 +24,8 @@ export const Recipeh =({current}:any) => {
 
     const metaClick = () => {
         dispatch(setFilter(current.voorkeur));
-        
+        //call notification
+        // window.alert('filter set to ' + current.voorkeur);
     }
 
     return (
