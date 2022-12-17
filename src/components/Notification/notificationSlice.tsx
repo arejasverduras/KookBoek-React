@@ -24,7 +24,7 @@ export const notificationSlice = createSlice({
     name: 'notifications',
     initialState,
     reducers: {
-        createNotification (state, action){
+        createNotification (state, action) {
             const {category, subject, description} = action.payload;
             const newNotification = {
                 category: category,
@@ -34,18 +34,23 @@ export const notificationSlice = createSlice({
             }
             state.notifications.push(newNotification);
             state.nextId++;
+            console.log('notificationCreated')
             setTimeout(() => {
-                notificationSlice.caseReducers.deleteNotification(state, {payload: newNotification.id, type: 'deleteNotification'})
+                notificationSlice.actions.deleteNotification(newNotification.id);
             }, 3000);
         },
         deleteNotification (state, action){
-            const {id} = action.payload;
-            const noteIndex = state.notifications.findIndex(note => note.id === id);
+            const id = action.payload;
+            console.log(id);
+            const noteIndex = state.notifications.findIndex((note)=> note.id === id)
             if (noteIndex >= 0){
                 state.notifications.splice(noteIndex,1);
                 state.nextId--;
-            };
-            console.log(`Notification with id: ${id} not found`);
+                console.log('notification deleted')
+            } else {
+                console.log(`Notification with id: ${id} not found`);
+            }
+            
             
         }
     }

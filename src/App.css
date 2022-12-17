@@ -663,3 +663,26 @@ a {
   border-radius: 15px;
   box-shadow: rgb(163, 196, 247) 6px 4px;
 }
+
+.NotificationList {
+  position:fixed;
+  right: 0;
+  top: 0;
+  z-index:10;
+
+}
+
+.Notification {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(163, 196, 247);
+  color: white;
+  width: 300px;
+  height: 50px;
+  padding: 20px;
+  box-shadow: rgba(100, 147, 218, 0.703) -3px 3px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-top: 2px;
+}

@@ -8,7 +8,7 @@ export const NotificationList  = () => {
     const notifications = useAppSelector(selectNotifications);
 
     const notificationList = notifications.map(notification => 
-            <Notification data={notification} />
+            <Notification data={notification} key={notification.id}/>
         )
     
     return (
