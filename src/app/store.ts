@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit';
 import recipehReducer from '../components/Recipehs/recipehSlice';
+import notificationReducer from '../components/Notification/notificationSlice';
 import type { PreloadedState } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
-  recipehs: recipehReducer
+  recipehs: recipehReducer, 
+  notifications: notificationReducer
 })
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
