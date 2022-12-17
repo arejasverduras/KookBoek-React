@@ -4,6 +4,7 @@ import { addFavorite, removeFavorite, selectFavorites } from '../../Recipehs/rec
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartOutline } from '@fortawesome/free-regular-svg-icons';
 import { faHeart, faHeartBroken} from '@fortawesome/free-solid-svg-icons';
+import { createNotification } from '../../Notification/notificationSlice';
 
 export const ToggleFavoriteButton = ({id}:any)=> {
     const dispatch = useAppDispatch();
@@ -13,10 +14,20 @@ export const ToggleFavoriteButton = ({id}:any)=> {
 
     const handleClickRemove = () => {
         dispatch(removeFavorite(id));
+        dispatch(createNotification({
+            category: 'favorite',
+            subject: 'Recipeh',
+            description: 'removed from '
+        }))
     }
     
     const handleClickAdd = () => {
         dispatch(addFavorite(id));
+        dispatch(createNotification({
+            category: 'favorite',
+            subject: 'Recipeh',
+            description: 'added to '
+        }))
     }
 
     if (!isFavorite) {

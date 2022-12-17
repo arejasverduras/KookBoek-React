@@ -35,9 +35,11 @@ export const notificationSlice = createSlice({
             state.notifications.push(newNotification);
             state.nextId++;
             console.log('notificationCreated')
+
             setTimeout(() => {
-                notificationSlice.actions.deleteNotification(newNotification.id);
+                notificationSlice.caseReducers.deleteNotification(state, {payload: newNotification.id, type: 'deleteNotification'});
             }, 3000);
+
         },
         deleteNotification (state, action){
             const id = action.payload;
