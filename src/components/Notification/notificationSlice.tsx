@@ -1,7 +1,6 @@
 import React from "react";
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import { recipehSlice } from "../Recipehs/recipehSlice";
 
 export interface Notification {
     category: string,
@@ -36,10 +35,9 @@ export const notificationSlice = createSlice({
             state.nextId++;
             console.log('notificationCreated')
 
-            setTimeout(() => {
-                notificationSlice.caseReducers.deleteNotification(state, {payload: newNotification.id, type: 'deleteNotification'});
-            }, 3000);
-
+            // setTimeout(() => {
+            //     notificationSlice.caseReducers.deleteNotification(state, {payload: newNotification.id, type: 'deleteNotification'});
+            // }, 3000);
         },
         deleteNotification (state, action){
             const id = action.payload;
@@ -52,14 +50,20 @@ export const notificationSlice = createSlice({
             } else {
                 console.log(`Notification with id: ${id} not found`);
             }
-            
-            
+        },
+        deleteFirstNotification (state) {
+                if (state.notifications.length > 0){
+                    state.notifications.shift();
+                } 
         }
+    },
+    extraReducers: {
+
     }
 })
 
 //export reducer actions
-export const { createNotification, deleteNotification} = notificationSlice.actions;
+export const { createNotification, deleteNotification, deleteFirstNotification} = notificationSlice.actions;
 
 //export selectors
 export const selectNotifications = (state: RootState) => state.notifications.notifications;

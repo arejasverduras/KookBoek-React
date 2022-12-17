@@ -4,7 +4,7 @@ import { faUtensils, faLeaf, faSeedling, faCow, faFish, faClock, faPastafarianis
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToggleFavoriteButton } from "../../FavoritesList/toggleFavoriteButton/toggleFavortieButton";
 import { setFilter } from "../recipehSlice";
-import { createNotification, deleteNotification } from "../../Notification/notificationSlice";
+import { createNotification, deleteFirstNotification, deleteNotification } from "../../Notification/notificationSlice";
 import { useAppDispatch } from "../../../app/hooks";
 
 
@@ -31,7 +31,10 @@ export const Recipeh =({current}:any) => {
             category: 'filter',
             subject: current.voorkeur,
             description: 'set to '
-        }));    
+        }));
+        setTimeout(() => {
+            dispatch(deleteFirstNotification());
+        }, 2000);    
     }
 
     return (
