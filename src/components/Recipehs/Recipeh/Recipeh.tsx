@@ -44,7 +44,7 @@ export const Recipeh =({current}:any) => {
                     style={{backgroundImage: `url(${current.picture === null? "/images/bord-geen-fotores.png": current.picture})`
             }}>
                 
-                <ToggleFavoriteButton className="CurrentRecipehFavoriteButton" id={current.id} />
+                <ToggleFavoriteButton className="CurrentRecipehFavoriteButton" id={current.id} naam={current.naam} />
             </div>
             
 

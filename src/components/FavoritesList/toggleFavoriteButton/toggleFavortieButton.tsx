@@ -6,7 +6,7 @@ import { faHeart as faHeartOutline } from '@fortawesome/free-regular-svg-icons';
 import { faHeart, faHeartBroken} from '@fortawesome/free-solid-svg-icons';
 import { createNotification, deleteFirstNotification } from '../../Notification/notificationSlice';
 
-export const ToggleFavoriteButton = ({id}:any)=> {
+export const ToggleFavoriteButton = ({id, naam}:any)=> {
     const dispatch = useAppDispatch();
     const favorites = useAppSelector(selectFavorites);
     
@@ -16,7 +16,7 @@ export const ToggleFavoriteButton = ({id}:any)=> {
         dispatch(removeFavorite(id));
         dispatch(createNotification({
             category: 'favorite',
-            subject: 'Recipeh',
+            subject: naam,
             description: 'removed from '
         }));
         setTimeout(() => {
@@ -28,7 +28,7 @@ export const ToggleFavoriteButton = ({id}:any)=> {
         dispatch(addFavorite(id));
         dispatch(createNotification({
             category: 'favorite',
-            subject: 'Recipeh',
+            subject: naam,
             description: 'added to '
         }));
         setTimeout(() => {

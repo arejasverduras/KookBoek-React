@@ -1,3 +1,4 @@
+import { current } from "@reduxjs/toolkit";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { selectAllRecipehs, selectRecipehHash, setCurrentRecipeh, setSearchTerm, addToRecipehHash } from "../../Recipehs/recipehSlice";
@@ -32,7 +33,7 @@ export const FavoritesTile = ({title, id, showFavorite}:any) => {
                     onClick={clickHandler}>
                     <h3 title={title? title: ""}>{recipehById.naam}</h3>
                     {/* <img src={recipehById.picture === null? "/images/bord-geen-fotores.png": recipehById.picture} alt="" /> */}
-                    {showFavorite? <ToggleFavoriteButton className="favoritesListHeart" id={id} /> : null }
+                    {showFavorite? <ToggleFavoriteButton className="favoritesListHeart" id={id} naam={recipehById.naam} /> : null }
                 </li>
         )
     } else {
